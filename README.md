@@ -1,11 +1,5 @@
 
-🛡️Bugs Report 
-===============
-🧪Song Error Found 
-🧪Yt Erro Found 
-🧪Base Error Found 
-🧪Wallpaper Error Found
-🧪Bot Not Working
+
 
 <p align="center">
   <a href="https://github.com/jesonpro/whatsAlexa">
@@ -14,8 +8,8 @@
   </a>
 
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/jesonpro/aw)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ramiya-yt/testingales)
 
 </a>
- Not Working 😬 Fail Project 
+ RAMIYA  TESTING PROJECT
 
