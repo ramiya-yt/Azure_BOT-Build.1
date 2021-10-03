@@ -13,7 +13,7 @@ module.exports = {
   XAPI: 'alexaapikey',
   XAPL: 'alexamystuff',
   XURL: 'ttps://api.zeks.me/api/',
-  XLPW: '\n\n *Powered by 👩‍🦰 Amazon Alexa Team*'
+  XLPW: '\n\n *Powered by 👩‍🦰 Amazon Alexa Team*',
   
   L001: 'https://ephoto360.com/tao-avatar-hacker-anonymous-neon-xanh-sieu-ngau-804.html',
   L002: 'https://ephoto360.com/hieu-ung-ve/viet-chu-galaxy-online-18.html',
