@@ -9,6 +9,7 @@ DEBUG = process.env.DEBUG === undefined ? false : convertToBool(process.env.DEBU
 
 module.exports = {
   VERSION: 'v1.0.0',
+  BOT: '🦹‍♂️ *RAMIYA BOT v1.0*',
   ADMIN: process.env.ADMIN === undefined ?'RAMIYA' : process.env.ADMIN,
   ADMIN1: process.env.ADMIN1 === undefined ?'RAMIYA' : process.env.ADMIN1,
  };
