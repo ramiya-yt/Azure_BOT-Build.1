@@ -759,7 +759,14 @@ else if (config.WORKTYPE == 'public') {
                 var tsts = match[1].replace('watch?v=', '')
                 var alal = tsts.split('/')[3]
                 VID = alal
-            } else {     
+            }
+            if (match[1].includes('shorts')) {
+                var rmx = match[1].replace('shorts/', '')
+				var rmy = rmx.replace('?feature=share', '')
+                var data = rmy.split('/')[3]
+                VID = data
+            }
+            else {     
                 VID = match[1].split('/')[3]
             }
         } catch {
@@ -773,7 +780,7 @@ else if (config.WORKTYPE == 'public') {
             },
             message: {
               "extendedTextMessage": {
-                "text": "*Dowloading*"
+                "text": "*RAMIYA OFFICIAL*"
               }
             }
         }
