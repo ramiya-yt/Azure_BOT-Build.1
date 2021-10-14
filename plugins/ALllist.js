@@ -1,7 +1,7 @@
 /* Copyright (C) 2021 TENUX-Neotro.
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
-NEOTROX - TEENUHX බටන් බලන්නත ආවෙ 😂 මේකත් උස්සපන් චීත්තයක් නෙ උබ තමා අපෙ එව්වා උස්සන්නෙ
+NEOTROX - TEENUHX 
 */
 
 const Amazone = require('../events');
@@ -27,7 +27,7 @@ var ddd = ggg.toString('utf-8')
 let tk = Config.WORKTYPE == 'public' ? false: true
 
 Amazone.addCommand({
-    pattern: 'menu', fromMe: tk, desc: Lang.MENU
+    pattern: 'zzaa', fromMe: tk, desc: Lang.MENU, dontAddCommandList: true
 }, (async (message, match) => {
         // send a list message!
         const rows = [{
@@ -85,7 +85,7 @@ Amazone.addCommand({
 if (Config.WORKTYPE == 'public') {
 
     Amazone.addCommand({
-        pattern: 'menu', fromMe: true, dontAddCommandList: true
+        pattern: 'zzaa', fromMe: true, dontAddCommandList: true
     }, (async (message, match) => {
             // send a list message!
             const rows = [{
