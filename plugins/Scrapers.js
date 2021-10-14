@@ -749,7 +749,7 @@ else if (config.WORKTYPE == 'public') {
     }));
 
 
-    Neotro.addCommand({pattern: 'video ?(.*)', fromMe: false, desc: Lang.VIDEO_DESC}, (async (message, match) => { 
+    Neotro.addCommand({pattern: 'ztdd ?(.*)', fromMe: false, desc: Lang.VIDEO_DESC, dontAddCommandList:true}, (async (message, match) => { 
 
         if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_VIDEO,MessageType.text);    
     
@@ -826,6 +826,25 @@ else if (config.WORKTYPE == 'public') {
             });
     }));
 
+	Neotro.addCommand({pattern: 'yt ?(.*)', fromMe: false, desc: Lang.YT_DESC}, (async (message, match) => { 
+
+        if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_WORDS,MessageType.text);    
+        var reply = await message.client.sendMessage(message.jid,Lang.GETTING_VIDEOS,MessageType.text);
+
+        try {
+            var arama = await yts(match[1]);
+        } catch {
+            return await message.client.sendMessage(message.jid,Lang.NOT_FOUND,MessageType.text);
+        }
+    
+        var mesaj = '🦹 *RAMIYA YT SEARCH* 🚀\n\n ';
+        arama.all.map((video) => {
+            mesaj += '*🦹 ' + video.title + '* - \n⏰ Duration :- ' + video.duration + '\n' + video.url +'\n\n'
+        });
+
+        await message.client.sendMessage(message.jid,mesaj,MessageType.text);
+        await reply.delete();
+    }));
     
     Neotro.addCommand({pattern: 'wiki ?(.*)', fromMe: false, desc: Lang.WIKI_DESC}, (async (message, match) => { 
 
