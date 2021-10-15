@@ -92,7 +92,7 @@ module.exports = {
     DEBUG: DEBUG,
     WITAI_API: "TEYMELA6DMC4XB5YM3SPTTQWUUIBKURG",
     FBAPI: 'OSuDZukzPWE49ro',
-    VIDAPI: '5c3ceca04a58',
+    VIDAPI: 'ramiya',
     SUPPORT: "9",
     SUPPORT2: "9",
     SUPPORT3: "9",
