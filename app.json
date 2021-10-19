@@ -1,9 +1,9 @@
 {
     "name": "Azure",
-    "description": "Azure Alexa Is Powerfull whatsapp bot For Whatsapp",
+    "description": "Azure Is Powerfull whatsapp bot For Whatsapp",
     "logo": "https://i.imgur.com/uZazlIF.png",
     "keywords": ["whatsapp", "userbot", "java", "button bot", "whatsapp", "api", "ai", "asena", "bug", "free rdp" ],
-    "repository": "https://github.com/ramiya-yt/Azure_BOT-Build.1",
+    "repository": "https://www.github.com/ramiya-yt/Azure_BOT-Build.1",
     "website":   "https://github.com/ramiya-yt/Azure_BOT-Build.1",
     "success_url": "https://github.com/ramiya-yt/Azure_BOT-Build.1",
     "stack": "container",
