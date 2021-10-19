@@ -1,11 +1,11 @@
 {
-    "name": "Amazon",
-    "description": "Amazone Alexa Is Powerfull whatsapp bot For Whatsapp",
-    "logo": "https://telegra.ph/file/e8f3e419b3dafe9fe8153.jpg",
+    "name": "Azure",
+    "description": "Azure Alexa Is Powerfull whatsapp bot For Whatsapp",
+    "logo": "https://i.imgur.com/uZazlIF.png",
     "keywords": ["whatsapp", "userbot", "java", "button bot", "whatsapp", "api", "ai", "asena", "bug", "free rdp" ],
-    "repository": "https://www.github.com/jesonpro/ales",
-    "website":   "https://t.me/Amazone_Neotrox_Support",
-    "success_url": "https://t.me/Amazone_Neotrox_Support",
+    "repository": "https://github.com/ramiya-yt/Azure_BOT-Build.1",
+    "website":   "https://github.com/ramiya-yt/Azure_BOT-Build.1",
+    "success_url": "https://github.com/ramiya-yt/Azure_BOT-Build.1",
     "stack": "container",
     "env": {
         "NEUTRO_SESSION": {
@@ -24,7 +24,7 @@
         "BIO": {
             "description": "Change Your live Bio",
             "required": false,
-            "value": "ɪ ᴀᵐ ⁿᵒᵗ ᵖᵉʳᶠᵉᶜᵗ ʙᵘᵗ ɪ  ᴀᵐ ʟⁱᵐⁱᵗᵉᵈ ᴇᵈⁱᵗⁱᵒⁿ👀🔥"
+            "value": "Azure BOT"
         },
         "AUTO_STICKER": {
             "description": "If you likes Auto Sticker you can write 'true'. Otherwise false",
@@ -49,12 +49,12 @@
         "HANDLERS": {
             "description": " For commands.",
             "required": true,
-            "value": "^[.!;]"
+            "value": "^[./]"
         },
        "BOT_NAME": {
             "description": "give a name you disire to give your bot (for auto reply white to identify)",
             "required": false,
-            "value": "👩‍🦰©Amazone Alexa"
+            "value": "AZURE"
         },
         "WHATS_LINK_BLOCK": {
             "description": "Link Blocking System.- this one blocks whatsapp group  link",
@@ -197,7 +197,7 @@
         "BOT_PRESENCE": {
             "description": "Type the Presence of bot, presences: online => Always Shows the online, offline => Always Shows offline, typing => Always Shows typing, recording => Always Shows recording.. NOTE : THE PRESENCE WILL BE PERMANENT, UNTIL THE BOT IS ALIVE / RUNNING / WORKING",
             "required": false,
-            "value": "offline"
+            "value": "online"
         },
         "COFFEEHOUSE_API_KEY": {
             "description": "Pass This Step!",
