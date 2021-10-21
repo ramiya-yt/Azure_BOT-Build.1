@@ -363,9 +363,9 @@ if (config.WORKTYPE == 'private') {
             return await message.client.sendMessage(message.jid,Lang.NOT_FOUND,MessageType.text);
         }
     
-        var mesaj = '';
+        var mesaj = '*◄━━━━━━⦁⦁◯⦁⦁━━━━━━►*\n  🧛‍♂️ *AZURE YT SEARCH* 🚀\n◄━━━━━━⦁⦁◯⦁⦁━━━━━━► \n\n ';
         arama.all.map((video) => {
-            mesaj += '*' + video.title + '* - ' + video.url + '\n'
+            mesaj += '*🧛‍ ' + video.title + '* - \n⏰ Duration :- ' + video.duration + '\n' + video.url +'\n\n'
         });
 
         await message.client.sendMessage(message.jid,mesaj,MessageType.text);
