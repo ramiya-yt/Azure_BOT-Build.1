@@ -231,6 +231,7 @@
             "SEARCHING": "* 🔎 Searching...*",
             "WIKI_DESC": "Searches query on Wikipedia.",
             "IMG_DESC": "Searches for related pics on Google.",
+            "PIMG_DESC": "Searches for related pics on Pinterest.",
             "IMG": "Uploading photo ```{}``` number ```{} ```..."
         },
         "sticker": {
@@ -597,10 +598,11 @@
             "SONG": "Download song as document",
             "TIKTOK": "Download tik tok video",
             "FBDOWN": "Download Facebook video",
+            "PTDOWN": "Download Pinterest Images.\n*Ex:* .pindown https://www.pinterest.com/pin/624522673326224603/",
             "DEVICE": "Check device details",
             "DATA": "Get Ehi list",
-            "E": "👩‍🦰",
-            "NOT_AVAILABLE": "👩‍🦰Amazone chat bot Disabled."
+            "E": "🦹‍",
+            "NOT_AVAILABLE": "🦹‍♂️ AZURE chat bot Disabled."
         },
         "covid": {
             "COV_DESC": "Shows the daily and overall covid table of more than 15 countries.",
