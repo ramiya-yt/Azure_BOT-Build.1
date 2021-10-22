@@ -9,7 +9,7 @@ const Alexa = require(file);
 const Language = require('../language');
 const Lang = Language.getString('scrapers');
 const ALang = Language.getString('amazone');
-const capt = "🧛‍♂️ *ALEXA PINTEREST DOWNLOADER* 💜"
+const capt = "\n\n🧛‍♂️ *AZURE PINTEREST DOWNLOADER* 💜"
 let typea = Alexa.WORKTYPE == 'public' ? false : true
 let typeb = Alexa.WORKTYPE == 'public' ? true : false
 const need = "🧛‍♂️ Type some word after command"
