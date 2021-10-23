@@ -1,3 +1,4 @@
+/*
 const Amazone = require('../events');
 const {MessageType} = require('@adiwajshing/baileys');
 const axios = require('axios');
@@ -55,3 +56,4 @@ Amazone.addCommand({ pattern: 'brainly ?(.*)', fromMe: true, desc: Lang.BR_DESC}
       },
     )
 
+*/
