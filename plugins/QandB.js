@@ -5,8 +5,6 @@ const Config = require('../config');
 const Language = require('../language');
 const Lang = Language.getString('amazone');
 
-// පින්වන්තියේ මාගේ මාගේ ප්‍රේම කතාවේ...🌼
-//ඇයිදෝ...මට පෑවෙ මල්මදහාසේ...🌟
 
 const brainly = "Finds the answer."
 const usage = ".brainly <Question>"
@@ -14,7 +12,7 @@ const usage = ".brainly <Question>"
 const butuh = "```Enter the Question!```"
 
 if (Config.WORKTYPE == 'public') {
-Amazone.addCommand({ pattern: 'amazone ?(.*)', fromMe: false, dontAddCommandList:true}, async (message, match) => {
+Amazone.addCommand({ pattern: 'brainly ?(.*)', fromMe: false, dontAddCommandList:true}, async (message, match) => {
 
         const Soal = match[1]
         
@@ -28,15 +26,15 @@ Amazone.addCommand({ pattern: 'amazone ?(.*)', fromMe: false, dontAddCommandList
               jawaban,
             } = response.data
 
-            const msg = `*Soal:* ${soal}
-*Jawaban Brainly:* ${jawaban.replace(/1Question/g, '*(1) Question*').replace(/2Question/g, '*(2) Question*').replace(/3Question/g, '*(3) Question*').replace(/Answer/g, '*Answer*').replace(/Brainly Found/g, '')}`
+            const msg = `*ප්‍රශ්නය :*  ${soal}
+*හමුවූ පිලිතුරු :*  ${jawaban.replace(/1Question/g, '*(1) Question*').replace(/2Question/g, '*(2) Question*').replace(/3Question/g, '*(3) Question*').replace(/Answer/g, '*Answer*').replace(/Brainly ditemukan, '')}`
             await message.client.sendMessage(message.jid, msg, MessageType.text)
            })
       },
     )
 }
 
-Amazone.addCommand({ pattern: 'amazone ?(.*)', fromMe: true, desc: Lang.BR_DESC}, async (message, match) => {
+Amazone.addCommand({ pattern: 'brainly ?(.*)', fromMe: true, desc: Lang.BR_DESC}, async (message, match) => {
 
         const Soal = match[1]
         
@@ -50,8 +48,8 @@ Amazone.addCommand({ pattern: 'amazone ?(.*)', fromMe: true, desc: Lang.BR_DESC}
               jawaban,
             } = response.data
 
-            const msg = `*Soal:* ${soal}
-*Jawaban Brainly:* ${jawaban.replace(/1Question/g, '*(1) Question*').replace(/2Question/g, '*(2) Question*').replace(/3Question/g, '*(3) Question*').replace(/Answer/g, '*Answer*').replace(/Brainly Found/g, '')}`
+            const msg = `*ප්‍රශ්නය :*  ${soal}
+*හමුවූ පිලිතුරු :*  ${jawaban.replace(/1Question/g, '*(1) Question*').replace(/2Question/g, '*(2) Question*').replace(/3Question/g, '*(3) Question*').replace(/Answer/g, '*Answer*').replace(/Brainly ditemukan, '')}`
             await message.client.sendMessage(message.jid, msg, MessageType.text)
            })
       },
