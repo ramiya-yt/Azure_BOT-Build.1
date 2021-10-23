@@ -186,7 +186,7 @@ if (match[1].includes(';')) {
 
     }));
 
- Neotro.addCommand({pattern: 'emo ?(.*)', fromMe: false, desc: 'emogi to png'}, (async (message, match) => {
+ Neotro.addCommand({pattern: 'emoji ?(.*)', fromMe: false, desc: 'emogi to png'}, (async (message, match) => {
 
       if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_WORD, MessageType.text);
         
