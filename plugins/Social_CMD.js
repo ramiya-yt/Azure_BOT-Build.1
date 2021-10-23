@@ -18,7 +18,7 @@ const DOWNMSG = "🧛‍♂️ *DOWNLOADING PINTEREST IMG...* 🤍"
 // ${Alexa.L001}
 
 //-------IMG-----------------------------------------------------------------	
-Asena.addCommand({ pattern: 'pimg ?(.*)', fromMe: typea, desc: Lang.PIMG_DESC}, (async (message, match) => {
+Asena.addCommand({ pattern: 'img ?(.*)', fromMe: typea, desc: Lang.PIMG_DESC}, (async (message, match) => {
 	
     const input = match[1]
 
@@ -73,7 +73,7 @@ Asena.addCommand({ pattern: 'pindown ?(.*)', fromMe: typea, desc: ALang.PTDOWN},
 })); // PINTEREST close
 
 //-------IMG-----------------------------------------------------------------	
-Asena.addCommand({ pattern: 'pimg ?(.*)', fromMe: typeb, dontAddCommandList: true}, (async (message, match) => {
+Asena.addCommand({ pattern: 'img ?(.*)', fromMe: typeb, dontAddCommandList: true}, (async (message, match) => {
 	
     const input = match[1]
 
