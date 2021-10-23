@@ -1,6 +1,6 @@
 const Neotro = require('../events');
 const { MessageType, MessageOptions, Mimetype } = require('@adiwajshing/baileys');
-const ANIME = "\n\n  *👩‍🦰Amazone Alexa Anime List*\n\n╔═════════▷\n╠🌼: .loli\n╠🌼: .wifu\n╠🌼: .neko\n╠🌼: .ava\n╠🌼: .kemo\n╠🌼: .awoo\n╠🌼: .shinobu\n╠🌼: .megumin\n╚═════════▷"
+const ANIME = "\n\n  *AZURE Anime List*\n\n╔═════════▷\n╠🌼: .loli\n╠🌼: .wifu\n╠🌼: .neko\n╠🌼: .ava\n╠🌼: .kemo\n╠🌼: .awoo\n╠🌼: .shinobu\n╠🌼: .megumin\n╚═════════▷"
 const fs = require('fs');
 const Ln = "Anime List"
 const axios = require('axios');
@@ -80,3 +80,45 @@ let tk = Config.WORKTYPE == 'public' ? false : true
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: Config.CAPTIONS})
     
     }));
+
+Neotro.addCommand({ pattern: '2anime ?(.*)', fromMe: tk,dontAddCommandList: true}, (async (message, match) => {
+      
+        var ttinullimage = await axios.get(`https://${Config.ZRUN}.xyz/api/anime/sfw/holo?apikey=${Config.ZTH}`, { responseType: 'arraybuffer' })
+
+        await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: Config.CAPTIONS})
+    
+    }));
+
+Neotro.addCommand({ pattern: '3anime ?(.*)', fromMe: tk,dontAddCommandList: true}, (async (message, match) => {
+      
+        var ttinullimage = await axios.get(`https://${Config.ZRUN}.xyz/api/anime/sfw/fox_girl?apikey=${Config.ZTH}`, { responseType: 'arraybuffer' })
+
+        await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: Config.CAPTIONS})
+    
+    }));
+
+Neotro.addCommand({ pattern: '4anime ?(.*)', fromMe: tk,dontAddCommandList: true}, (async (message, match) => {
+      
+        var ttinullimage = await axios.get(`https://${Config.ZRUN}.xyz/api/anime/sfw/neko?apikey=${Config.ZTH}`, { responseType: 'arraybuffer' })
+
+        await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: Config.CAPTIONS})
+    
+    }));
+
+Neotro.addCommand({ pattern: 'catpic ?(.*)', fromMe: tk,dontAddCommandList: true}, (async (message, match) => {
+      
+        var ttinullimage = await axios.get(`https://${Config.ZRUN}.xyz/api/anime/sfw/meow?apikey=${Config.ZTH}`, { responseType: 'arraybuffer' })
+
+        await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: Config.CAPTIONS})
+    
+    }));
+
+Neotro.addCommand({ pattern: 'awallpaper ?(.*)', fromMe: tk,dontAddCommandList: true}, (async (message, match) => {
+      
+        var ttinullimage = await axios.get(`https://${Config.ZRUN}.xyz/api/anime/sfw/wallpaper?apikey=${Config.ZTH}`, { responseType: 'arraybuffer' })
+
+        await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: Config.CAPTIONS})
+    
+    }));
+
+
