@@ -12,17 +12,42 @@ const Config = require('../config');
 let Language = require('../language');
 let Lang = Language.getString('amazone');
 const ll ="*Need some Word*"
-const Ln = "*▷🎭ɴᴇᴏᴛʀᴏ-𝙭🪐මීම් ලැයිස්තුව ඔබට අවශ්‍ය ලෙස මීම්ස් සකසා ගැනීමට◁* "
-const code = "*╔═════◉ᴀᴍᴀᴢᴏɴᴇ◉═════╗*\n           👩‍🦰ᴀᴍᴀᴢᴏɴᴇ-x🪐\n*❖═මීම් ලැයිස්තුව 👩‍🦰 Meme Pack═❖*\n\n*💠.yasai       ❴your text❵*\n*💠.uddika    ❴your text❵*\n*💠.aah          ❴your text❵*\n*💠.sir            ❴your text❵*\n*💠.my3         ❴your text❵*\n*💠.fuck         ❴your text❵*\n*💠.hii             ❴your text❵*\n*💠.asai          ❴your text❵*\n*💠.hapoi       ❴your text❵*\n*💠.anura       ❴your text❵*\n*💠.gemba       ❴your text❵*\n*💠.wow       ❴your text❵*\n*💠.hapo       ❴your text❵*\n*💠.babah       ❴your text❵*\n*💠.mcn       ❴your text❵*\n*💠.nah       ❴your text❵*\n*╚═══❖══▣══▣══❖═══╝*\n\n*▷Template Credit: එ.මි.ස ¡v**"
+const Ln = "*AZURE මීම් ලැයිස්තුව ඔබට අවශ්‍ය ලෙස මීම්ස් සකසා ගැනීමට◁* "
+
 let td = Config.WORKTYPE == 'public' ? false : true
     
-      Asena.addCommand({pattern: 'mmpack', fromMe: td, desc: Lang.MMPACK,}, (async (message, match) => {
+      Asena.addCommand({pattern: 'listmeme', fromMe: td, deleteCommand: false,}, (async (message, match) => {
 
-    await message.client.sendMessage(
-  
-      message.jid,code, MessageType.text);
-  
-  }));
+        var respoimage = await axios.get(`https://i.imgur.com/cndnX3n.jpg`, { responseType: 'arraybuffer' })
+        await message.client.sendMessage(message.jid, Buffer.from(respoimage.data), MessageType.image, {mimetype: Mimetype.png, caption: `*╭──────•◈•──────╮*
+       *MEME COMMANDS*
+            *•   AZURE ©  •*
+            
+*💠.yasai       ❴your text❵*
+*💠.uddika    ❴your text❵*
+*💠.aah          ❴your text❵*
+*💠.sir            ❴your text❵*
+*💠.my3         ❴your text❵*
+*💠.hii             ❴your text❵*
+*💠.asai          ❴your text❵*
+*💠.hapoi       ❴your text❵*
+*💠.anura       ❴your text❵*
+*💠.gemba       ❴your text❵*
+*💠.wow       ❴your text❵*
+*💠.hapo       ❴your text❵*
+*💠.babah       ❴your text❵*
+*💠.nah       ❴your text❵*
+*💠.kalu       ❴your text❵*
+*💠.trumpsay    ❴your text❵*
+*💠.changesay    ❴your text❵*
+
+*▷Photo Credit: එ.මි.ස*
+══════════════════
+       *Copyright © AZURE*
+     POWERED BY RAMIYA
+══════════════════
+*╰──────•◈•──────╯* ` })
+    }));
 
     Asena.addCommand({ pattern: 'my3 ?(.*)', fromMe: td, dontAddCommandList: true }, (async (message, match) => {
 
@@ -34,15 +59,6 @@ let td = Config.WORKTYPE == 'public' ? false : true
 
     }));
 
-Asena.addCommand({ pattern: 'fuck ?(.*)', fromMe: td, dontAddCommandList: true }, (async (message, match) => {
-
-        if (match[1] === '') return await message.sendMessage(ll);
-
-        var ttinullimage = await axios.get(`https://docs-jojo.herokuapp.com/api/meme-gen?top=%20&bottom=${encodeURIComponent(match[1])}&img=https://telegra.ph/file/9d4db91478cc90cbe814c.jpg/revision/latest/top-crop/width/720/height/720?cb=20190205115000`, { responseType: 'arraybuffer' })
-
-        await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: Config.BOT_NAME})
-
-    }));
 
 Asena.addCommand({ pattern: 'hii ?(.*)', fromMe: td, dontAddCommandList: true }, (async (message, match) => {
 
@@ -184,11 +200,11 @@ Asena.addCommand({ pattern: 'nah ?(.*)', fromMe: td, dontAddCommandList: true },
 
     }));
 
-Asena.addCommand({ pattern: 'kaluhutta ?(.*)', fromMe: td, dontAddCommandList: true }, (async (message, match) => {
+Asena.addCommand({ pattern: 'kalu ?(.*)', fromMe: td, dontAddCommandList: true }, (async (message, match) => {
 
         if (match[1] === '') return await message.sendMessage(ll);
 
-        var ttinullimage = await axios.get(`https://docs-jojo.herokuapp.com/api/meme-gen?top=%20&bottom=${encodeURIComponent(match[1])}&img=https:https://telegra.ph/file/48c4688caae9b9a157263.jpg/revision/latest/top-crop/width/300/height/235?cb=20190205115000`, { responseType: 'arraybuffer' })
+        var ttinullimage = await axios.get(`https://docs-jojo.herokuapp.com/api/meme-gen?top=%20&bottom=${encodeURIComponent(match[1])}&img=https://memestatic1.fjcdn.com/comments/If+i+was+this+dudes+nco+i+would+tell+him+_72893701101f5e406b4ee9ba63c02160.jpg`, { responseType: 'arraybuffer' })
 
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: Config.BOT_NAME})
 
