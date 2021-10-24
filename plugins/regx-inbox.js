@@ -42,14 +42,9 @@ const WARN = `
 
  if (Config.INBOX_BLOCK == 'true') {
 teenu.addCommand({on: 'text', fromMe: false, onlyPm: true }, (async (message, match) => {
-        let regexb1ichu = new RegExp('.a')
-        let regexb2ichu = new RegExp('.s')
-        let regexb3ichu = new RegExp('.y')
-        let regexb4ichu = new RegExp('.h')
-        let regexb5ichu = new RegExp('sew')
-        let regexb6ichu = new RegExp('.v')
-        let regexb7ichu = new RegExp('./')
-        let regexb8ichu = new RegExp('.')
+        let regexb1ichu = new RegExp('.')
+        let regexb2ichu = new RegExp('abcdefghijklmnopqrstuvwxyz')
+
 
           if (regexb1ichu.test(message.message)) {
            
@@ -58,44 +53,9 @@ teenu.addCommand({on: 'text', fromMe: false, onlyPm: true }, (async (message, ma
           } 
         else if (regexb2ichu.test(message.message)) {
           
-           await message.client.sendMessage(message.jid, INBO1, MessageType.text);
-            await message.client.blockUser(message.jid, "add");
+           await message.client.sendMessage(message.jid, WARN, MessageType.text);
           }
-         else if (regexb3ichu.test(message.message)) {
-           
-            await message.client.sendMessage(message.jid, INBO1, MessageType.text);
-            await message.client.blockUser(message.jid, "add");
-          }
-        else if (regexb4ichu.test(message.message)) {
-           
-            await message.client.sendMessage(message.jid, INBO1, MessageType.text);
-            await message.client.blockUser(message.jid, "add");
-          }
-          else if (regexb5ichu.test(message.message)) {
-           
-            await message.client.sendMessage(message.jid, INBO1, MessageType.text);
-            await message.client.blockUser(message.jid, "add");
-          }
-          else if (regexb6ichu.test(message.message)) {
-           
-            await message.client.sendMessage(message.jid, INBO1, MessageType.text);
-            await message.client.blockUser(message.jid, "add");
-          }
-         else if (regexb6ichu.test(message.message)) {
-           
-            await message.client.sendMessage(message.jid, INBO1, MessageType.text);
-            await message.client.blockUser(message.jid, "add");
-          }
-         else if (regexb7ichu.test(message.message)) {
-           
-            await message.client.sendMessage(message.jid, INBO1, MessageType.text);
-            await message.client.blockUser(message.jid, "add");
-          }
-         else if (regexb8ichu.test(message.message)) {
-           
-            await message.client.sendMessage(message.jid, INBO1, MessageType.text);
-            await message.client.blockUser(message.jid, "add");
-          }
+
           
 }));
 
