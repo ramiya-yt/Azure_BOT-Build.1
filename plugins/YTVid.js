@@ -22,7 +22,7 @@ let ramiya = Alexa.WORKTYPE == 'public' ? false : true
 let amazone = Alexa.WORKTYPE == 'public' ? true : false
 
 
-Ramiya.addCommand({ pattern: 'video ?(.*)', fromMe: ramiya, desc: Lang.VIDEO_DESC, deleteCommand: false}, async (message, match) => {
+Ramiya.addCommand({ pattern: '2video ?(.*)', fromMe: ramiya, desc: Lang.VIDEO_DESC, deleteCommand: false}, async (message, match) => {
 
         const link = match[1] // 😡 අදත් ආවද Code එක උස්සන්න තිරිසනො  😖
     
@@ -56,7 +56,7 @@ Ramiya.addCommand({ pattern: 'video ?(.*)', fromMe: ramiya, desc: Lang.VIDEO_DES
       },
     )
 	
-	Ramiya.addCommand({ pattern: 'video ?(.*)', fromMe: amazone, deleteCommand: false, dontAddCommandList:true}, async (message, match) => {
+	Ramiya.addCommand({ pattern: '2video ?(.*)', fromMe: amazone, deleteCommand: false, dontAddCommandList:true}, async (message, match) => {
 
         const link = match[1] // 😡 අදත් ආවද Code එක උස්සන්න තිරිසනො  😖
     
