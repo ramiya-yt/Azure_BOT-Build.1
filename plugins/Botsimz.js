@@ -13,6 +13,10 @@ const Config = require('../config');
 const Language = require('../language');
 const Lang = Language.getString('amazone');
 
+const azure = `*🦹‍♂️ : හායි ඔයාලට කොහොමද?,*
+          *මම Azure Bot*
+🧛‍♂️ : *මගේ Command Menu එක ලබා ගැනීමට .azure කියලා msg එකක් දාන්න*`
+
 const heroku = new Heroku({
     token: Config.HEROKU.API_KEY
 });
@@ -27,7 +31,7 @@ if (Config.AI_BOT == 'true') {
 			try {
 				const response = await got(url);
 				const json = JSON.parse(response.body);
-			if (response.statusCode === 200) return await message.client.sendMessage(message.jid, '\n*🦹‍♂️ ' + Lang.BOT +'* ```' + json.messages[0].response + '```\n\n' , MessageType.text,{quoted: message.data});
+			if (response.statusCode === 200) return await message.client.sendMessage(message.jid, '\n*🦹‍♂️ ' + Lang.BOT +'* ```' + json.messages[0].response + '```\n' , MessageType.text,{quoted: message.data});
 			} catch {
 				return await message.client.sendMessage(message.jid, Lang.NOT_FOUNDAC, MessageType.text);
 			}
@@ -37,11 +41,13 @@ if (Config.AI_BOT == 'true') {
 	else if (Config.WORKTYPE == 'public') {
 		Asena.addCommand({pattern: 'bot ?(.*)', fromMe: false, desc: Lang.BOT_DESC}, async (message, match) => {
 			if (match[1] === 'xx') return await message.reply(Lang.NEED_LOCATIONA);
+			if (match[1] === '') return await message.reply(azure);
+			if (match[1] === 'hi') return await message.reply(azure);
 			const url = `https://api.simsimi.net/v2/?text=${match[1]}&lc=en&cf=true`;
 			try {
 				const response = await got(url);
 				const json = JSON.parse(response.body);
-			if (response.statusCode === 200) return await message.client.sendMessage(message.jid, '\n*🦹‍♂️ ' + Lang.BOT +'* ```' + json.messages[0].response + '```\n\n' , MessageType.text,{quoted: message.data});
+			if (response.statusCode === 200) return await message.client.sendMessage(message.jid, '\n*🦹‍♂️ ' + Lang.BOT +'* ```' + json.messages[0].response + '```\n' , MessageType.text,{quoted: message.data});
 			} catch {
 				return await message.client.sendMessage(message.jid, Lang.NOT_FOUNDAC, MessageType.text);
 			}
