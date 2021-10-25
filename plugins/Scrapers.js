@@ -749,7 +749,7 @@ else if (config.WORKTYPE == 'public') {
     }));
 
 
-    Neotro.addCommand({pattern: 'ztdd ?(.*)', fromMe: false, desc: Lang.VIDEO_DESC, dontAddCommandList:true}, (async (message, match) => { 
+    Neotro.addCommand({pattern: 'video ?(.*)', fromMe: false, desc: Lang.VIDEO_DESC, dontAddCommandList:true}, (async (message, match) => { 
 
         if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_VIDEO,MessageType.text);    
     
@@ -790,7 +790,7 @@ else if (config.WORKTYPE == 'public') {
 
         yt.on('end', async () => {
             reply = await message.client.sendMessage(message.jid,Lang.UPLOADING_VIDEO,MessageType.text);
-            await message.client.sendMessage(message.jid,fs.readFileSync('./' + VID + '.mp4'), MessageType.video, {mimetype: Mimetype.mp4});
+            await message.client.sendMessage(message.jid,fs.readFileSync('./' + VID + '.mp4'), MessageType.video, {mimetype: Mimetype.mp4, caption: ' 🧛‍♂️ *AZURE BOT* '});
         });
     }));
 
