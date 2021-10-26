@@ -1,4 +1,4 @@
-
+/*
 const Azure = require('../events');
 const { MessageType, MessageOptions, Mimetype } = require('@adiwajshing/baileys');
 const fs = require('fs');
@@ -562,3 +562,4 @@ const code = ` *╭──────•◈•──────╮*
     }));
  
 
+*/
