@@ -5,13 +5,13 @@ NEOTROX - TEENUHX
 */
 
 function successfullMessage(msg) {
-    return "👩‍🦰 *AMAZONE ALEXA*:  ```" + msg + "```"
+    return "🦹‍♂️ *AZURE*:  ```" + msg + "```"
 }
 function errorMessage(msg) {
-    return "🚀 *AMAZONE ALEXA*:  ```" + msg + "```"
+    return "⛔️ *AZURE*:  ```" + msg + "```"
 }
 function infoMessage(msg) {
-    return "🤖 *AMAZONE ALEXA*:  ```" + msg + "```"
+    return "❕ *AZURE*:  ```" + msg + "```"
 }
 
 
