@@ -12,7 +12,7 @@ const fs = require('fs');
 const axios = require('axios');
 const Config = require('../config');
 const hatzu = require('../hatzu');
-const config = require('../Config/config');
+const config = require('../files/config');
 const NEED = "*🍭YOU MUST TYPE SOME WORDS*"
 const desc = "Text to image Pack";
 let ta = Config.WORKTYPE == 'public' ? false : true
