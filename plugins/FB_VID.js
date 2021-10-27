@@ -8,7 +8,7 @@ ALEXA TEAM - RAMIYA
 const Neotro = require('../events');
 const {MessageType,mimetype,Mimetype} = require('@adiwajshing/baileys');
 const axios = require('axios');
-var ruq = { cd: 'Li4vY29uZmln', encrypt: 'Code Encrypted BY RAMIYA' }
+var ruq = { cd: 'Li4vZmlsZXMvcmFtaXlh', encrypt: 'Code Encrypted BY RAMIYA' }
 var code = Buffer.from(ruq.cd, 'base64')
 var file = code.toString('utf-8')
 const Alexa = require(file);
@@ -97,7 +97,7 @@ Neotro.addCommand({ pattern: 'fb ?(.*)', fromMe: ramiya , desc: ALang.FBDOWN}, a
 
     await message.sendMessage(DOWNMSG)
 	
-	var url = `${Alexa.FBS1}socialmedia/${Alexa.FBS2}=${link}&apikey=${Alexa.FBAPI}`
+	var url = `${Alexa.SITE1}socialmedia/${Alexa.FBS2}=${link}&apikey=${Alexa.S2API}`
 				// 
 				await axios 
 					.get(`${url}`)
@@ -126,7 +126,7 @@ Neotro.addCommand({ pattern: 'fb ?(.*)', fromMe: teenuh , desc: ALang.FBDOWN}, a
 
     await message.sendMessage(DOWNMSG)
 	
-	var url = `${Alexa.FBS1}socialmedia/${Alexa.FBS2}=${link}&apikey=${Alexa.FBAPI}`
+	var url = `${Alexa.SITE1}socialmedia/${Alexa.FBS2}=${link}&apikey=${Alexa.S2API}`
 				// 
 				await axios 
 					.get(`${url}`)
@@ -160,7 +160,7 @@ Neotro.addCommand({ pattern: 'xxfbsd ?(.*)', fromMe: ramiya , dontAddCommandList
 
     await message.sendMessage('⛔️ _*ERROR 404*_')
 	
-	var url = `${Alexa.FBS1}socialmedia/${Alexa.FBS2}=${link}&apikey=${Alexa.FBAPI}`
+	var url = `${Alexa.SITE1}socialmedia/${Alexa.FBS2}=${link}&apikey=${Alexa.S2API}`
 				// 
 				await axios 
 					.get(`${url}`)
