@@ -24,7 +24,7 @@ AZURE.addCommand({ pattern: 'prologo ?(.*)', fromMe: ta,dontAddCommandList: true
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: Config.CAPTIONS})
     }));
 
-AZURE.addCommand({ pattern: 'prologo ?(.*)', fromMe: ta,dontAddCommandList: true}, (async (message, match) => {
+AZURE.addCommand({ pattern: 'prologo ?(.*)', fromMe: tb,dontAddCommandList: true}, (async (message, match) => {
         if (match[1] === '') return await message.sendMessage(NEED);
         var ttinullimage = await axios.get(`${config.HTTPS}${config.SCRAPE}${config.SUP_HEROKU}${config.QR}name=${encodeURIComponent(match[1])}`, { responseType: 'arraybuffer' })
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: Config.CAPTIONS})
