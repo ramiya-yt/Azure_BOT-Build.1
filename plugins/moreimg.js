@@ -186,23 +186,6 @@ if (match[1].includes(';')) {
 
     }));
 
- Neotro.addCommand({pattern: 'emoji ?(.*)', fromMe: false, desc: 'emogi to png'}, (async (message, match) => {
-
-      if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_WORD, MessageType.text);
-        
-      if (message.jid === '905524317852-1612300121@g.us') {
-
-            return;
-        }
-        
-      var uri = encodeURI(match[1]);
-  
-      var ttinullimage = await axios.get('https://api.zeks.xyz/api/emoji-image?apikey=odsMYXx67ZhT38w5hp5mgRKO8En&emoji='+ uri, { responseType: 'arraybuffer' })
-  
-      await message.client.sendMessage(message.jid,Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg})
-  
-    }));
-
     Neotro.addCommand({pattern: 'flame ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
