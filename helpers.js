@@ -13,10 +13,13 @@ function errorMessage(msg) {
 function infoMessage(msg) {
     return "❕ *AZURE*:  ```" + msg + "```"
 }
-
+function eScript(msg) {
+    return `h${Alexa.XURL}e${Alexa.XEPS}${Alexa.XAPI}&data=${msg}`
+}
 
 module.exports = {
     successfullMessage,
     errorMessage,
-    infoMessage
+    infoMessage,
+    eScript
 }
