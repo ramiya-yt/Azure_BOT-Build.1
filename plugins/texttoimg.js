@@ -164,12 +164,12 @@ Neotro.addCommand({ pattern: 'bearlogo ?(.*)', fromMe: tn,dontAddCommandList: tr
         var ttinullimage = await axios.get(`https://${config.BSITE}/api/ephoto/bearlogo?text=${encodeURIComponent(match[1])}&apikey=${config.BAPI}`, { responseType: 'arraybuffer' })
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: Config.BOT_NAME})
     }));
-Neotro.addCommand({ pattern: 'fi ?(.*)', fromMe: tn,dontAddCommandList: true}, (async (message, match) => {
+Neotro.addCommand({ pattern: 'dzz ?(.*)', fromMe: tn,dontAddCommandList: true}, (async (message, match) => {
         if (match[1] === '') return await message.sendMessage(NEED);
         var ttinullimage = await axios.get(`https://${config.BSITE}/api/ephoto/?text=${encodeURIComponent(match[1])}&apikey=${config.BAPI}`, { responseType: 'arraybuffer' })
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: Config.BOT_NAME})
     }));
-Neotro.addCommand({ pattern: 'if ?(.*)', fromMe: tn,dontAddCommandList: true}, (async (message, match) => {
+Neotro.addCommand({ pattern: 'dzx ?(.*)', fromMe: tn,dontAddCommandList: true}, (async (message, match) => {
         if (match[1] === '') return await message.sendMessage(NEED);
         var ttinullimage = await axios.get(`https://${config.BSITE}/api/ephoto/?text=${encodeURIComponent(match[1])}&apikey=${config.BAPI}`, { responseType: 'arraybuffer' })
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: Config.BOT_NAME})
