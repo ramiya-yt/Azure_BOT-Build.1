@@ -161,7 +161,7 @@ Azure.addCommand({pattern: 'spdf ?(.*)', fromMe: tp1, desc: ALang.SPDF }, (async
 	
 	await message.client.sendMessage(message.jid, ALang.SPDF_PROC, MessageType.text);
 	await message.sendMessage(Buffer.from(webimage.data), MessageType.document, {mimetype: Mimetype.pdf, filename: 'SITE2PDF-AZURE.pdf'}
-	
+	)
 	}));
 	
 Azure.addCommand({pattern: 'spdf ?(.*)', fromMe: tp2, desc: ALang.SPDF }, (async (message, match) => {
@@ -172,7 +172,7 @@ Azure.addCommand({pattern: 'spdf ?(.*)', fromMe: tp2, desc: ALang.SPDF }, (async
 	
 	await message.client.sendMessage(message.jid, ALang.SPDF_PROC, MessageType.text);
 	await message.sendMessage(Buffer.from(webimage.data), MessageType.document, {mimetype: Mimetype.pdf, filename: 'SITE2PDF-AZURE.pdf'}
-	
+	)
 	}));
 	
 // -----------------------------------------------------------------------------------------------------------------------------
