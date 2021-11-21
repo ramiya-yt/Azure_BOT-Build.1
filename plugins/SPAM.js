@@ -15,7 +15,7 @@ const Language = require('../language');
 const Lang = Language.getString('spammer');
 const reply = "*Please Reply To Any Message!*"
 const longmsg = "🦹‍♂️ *Error :- එක්වරකට Spam කල හැක්කේ 500ක් දක්වා පමණි. කරුණාකර 1ත් 500ත් අතර ගණනක් ඇතුලත් කරන්න*"
-const enterno = "🦹‍♂️ *Command එක ඉදිරියෙන් කිරිමට අවශ්‍ය ප්‍රමාණය ඇතුලත් කරන්න.* \nText Spam :- 1 සිට 1000 දක්වා අගයක්\nPhoto Spam :- 1 සිට 500 දක්වා අගයක්\n*Spam නැවැත්විමට  .killspam ඇතුලත් කරන්න*"
+const enterno = "🦹‍♂️ *Command එක ඉදිරියෙන් කිරිමට අවශ්‍ය ප්‍රමාණය ඇතුලත් කරන්න.* \nText Spam :- 1 සිට 1000 දක්වා අගයක්\nPhoto Spam/Audio Spam :- 1 සිට 500 දක්වා අගයක්\n*Spam නැවැත්විමට  .killspam ඇතුලත් කරන්න*"
 const start = "😼 ක්ක්ක්ක්ක් නමස්තෙ නමස්කාරකම් කියලා පටන් ගන්නම් දුවන්න නම් හදන්න එපා ඈ 😹"
 
 
@@ -56,10 +56,10 @@ _Ex :- .photospam 300_
 ⛲️ Photo එකකට Reply ආකාරයේන් ඇතුලත් කරන්න. 
 ⭕️ Sticker එකකට Reply නොකර photo එකකට Reply කරන්න. Photo එක Sticker වී ස්පෑම් වේ.
 
-🦹‍♂️ *.audiospam* {count}
+🦹‍♂️ *.audspam* {count}
 ⛲️ Audio/Voice එකකට Reply ආකාරයේන් ඇතුලත් කරන්න. Command එක ඉදිරියෙන් ස්පෑම් විය යුතු වාර ගණන සදහන් කරන්න.
 ⭕️ ඉදිරියෙන් 1 සිට 500 දක්වා ඉලක්කමක් ඇතුලත් කරන්න.
-_Ex :- .audiospam 200_
+_Ex :- .audspam 200_
 
 ----------------------------------------------
 පහත Command වලට අපෙන් Plugin ලබාගත හැක.
@@ -199,7 +199,7 @@ await message.client.sendMessage(message.jid, start, MessageType.text);
             }
             setInterval(async () => {
                 await message.sendMessage(fs.readFileSync('./output.webp'), MessageType.sticker)
-            }, 200)
+            }, 1000)
         });
     }
 
@@ -209,14 +209,14 @@ await message.client.sendMessage(message.jid, start, MessageType.text);
         .on('end', async () => {
             setInterval(async () => {
                 await message.sendMessage(fs.readFileSync('sticker.webp'), MessageType.sticker);
-            }, 200)
+            }, 1000)
         });
 		
 }));
 
 // -----------------------------------------------A-U-D-I-O--S-P-A-M-----------------------------------------------------------------------
 
-Azure.addCommand({pattern: 'audiospam ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
+Neotro.addCommand({pattern: 'audspam ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
     
     if (!message.reply_message) return await message.client.sendMessage(message.jid, Lang.AU_REP, MessageType.text);
 	if (match[1] === '') {return await message.client.sendMessage(message.jid, enterno, MessageType.text); }
