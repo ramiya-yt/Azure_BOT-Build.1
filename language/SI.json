@@ -407,12 +407,12 @@
             "FF_PROC": "\n🔄 Applying Effect..\n"
         },
         "spammer": {
-            "SPAM_DESC": "*ඔබ එය අක්‍රිය කරන දුරු ස්පැම් පණිවිඩ යවයි.*.\n⌨️ Example: .spam test",
+            "SPAM_DESC": "*ඔබ එය අක්‍රිය කරන දුරු ස්පැම් පණිවිඩ යවයි.*.\n⌨️ Example: .xspam test",
             "NEED_WORD": "*Need Some Words!*",
             "STOP_SPAMDESC": "*ස්පෑම් විධාන අක්‍රිය කරයි.*",
             "STOP_SPAM": "✅ *Spam successfully stopped! Please wait a moment.*",
             "ST_DESC": "*පිලිතුරු දුන් ස්ටිකරය ස්පෑම් ලෙස යවයි.*",
-            "ST_ST": "```Please Don't Reply to Stciker!```\n```Only Reply to Video or Photo!```",
+            "ST_ST": "```Please Don't Reply to Sticker!```\n```Only Reply to Photo!```",
             "ST_NEED": "```You Must Reply To Any Video Or Photo!```",
             "AU_DESC": "*පිළිතුරු දුන් Audio ස්පෑම් ලෙස යවයි.*",
             "AU_REP": "```Please Only Reply To Audio File!```",
