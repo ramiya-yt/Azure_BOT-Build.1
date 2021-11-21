@@ -72,6 +72,7 @@ module.exports = {
     BAD_KICK: process.env.BAD_KICK === undefined ? 'false' : process.env.BAD_KICK,
     ALL_LINK_BAN: process.env.ALL_LINK_BAN === undefined ? 'false' : process.env.ALL_LINK_BAN,
     BAD_KICK: process.env.BAD_KICK === undefined ? 'false' : process.env.BAD_KICK,
+    SPDFAPI: process.env.SPDFAPI === undefined ?'EHbew2GJGOzI5qCldC5Oiu7yVgcVuH39VvmOQGPNQE7Ap7EHKyaqA9ziEn1SRSj5' : process.env.SPDFAPI,
     SITE: process.env.SITE === undefined ?'netfiletolink.herokuapp.com/' : process.env.SITE,
     FBS1: process.env.FBS1 === undefined ?'https://api.dapuhy.ga/api/' : process.env.FBS1,
     FBS2: process.env.FBS2 === undefined ?'snapsave?url' : process.env.FBS2,
