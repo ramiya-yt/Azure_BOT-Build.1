@@ -216,7 +216,7 @@ await message.client.sendMessage(message.jid, start, MessageType.text);
 
 // -----------------------------------------------A-U-D-I-O--S-P-A-M-----------------------------------------------------------------------
 
-Neotro.addCommand({pattern: 'audiospam ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
+Azure.addCommand({pattern: 'audiospam ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
     
     if (!message.reply_message) return await message.client.sendMessage(message.jid, Lang.AU_REP, MessageType.text);
 	if (match[1] === '') {return await message.client.sendMessage(message.jid, enterno, MessageType.text); }
