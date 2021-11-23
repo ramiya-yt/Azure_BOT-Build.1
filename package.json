@@ -1,35 +1,36 @@
 {
-  "name": "ales",
-  "version": "7.3.6",
-  "description": ".",
+  "name": "azure",
+  "version": "1.0.0",
+  "description": "🤍 Azure is Powerful Whatsapp Userbot helping to improve your Whatsapp experience.",
   "main": "./amazoneAlexa/bot.js",
   "scripts": {
     "start": "supervisor -s bot.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jesonpro/ales.git"
+    "url": "git+https://github.com/ramiya-yt/Azure_BOT-Build.1.git"
   },
   "keywords": [
     "whatsapp",
     "bot",
     "ai",
-    "amazone",
-    "alexa"
+    "public",
+    "userbot",
+    "azure"
   ],
-  "author": "Alexa",
-  "developer": "@terror-boy / @HatzuHole",
+  "author": "Azure",
+  "developer": "RamiYa YT",
   "license": "GPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/jesonpro/ales/issues"
+    "url": "https://github.com/ramiya-yt/Azure_BOT-Build.1/issues"
   },
-  "homepage": "https://github.com/jesonpro/ales#readme",
+  "homepage": "https://github.com/ramiya-yt/Azure_BOT-Build.1#readme",
   "dependencies": {
-    "@adiwajshing/baileys": "3.5.2",
+    "@adiwajshing/baileys": "3.5.3",
     "@lh2020/speedtest-net": "^2.1.1",
     "browser-id3-writer": "^4.4.0",
     "playstore-scraper": "^1.0.0",
-    "axios": "^0.21.1",
+    "axios": "^0.21.4",
     "googlethis": "^1.0.7",
     "audiobuffer-to-wav": "1.0.0",
     "chalk": "^4.1.0",
@@ -67,7 +68,7 @@
     "solenolyrics": "^5.0.0",
     "translatte": "^3.0.0",
     "wikijs": "^6.0.1",
-    "yt-search": "^2.7.4",
-    "ytdl-core": "^4.8.3"
+    "yt-search": "^2.9.0",
+    "ytdl-core": "^4.9.1"
   }
 }
