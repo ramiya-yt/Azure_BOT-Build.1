@@ -2,7 +2,7 @@
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 RAMIYA - AZURE BOT
-*/
+
 // 😡 අදත් ආවද Code එක උස්සන්න තිරිසනො  😖
 
 const Ramiya = require('../events');
@@ -162,3 +162,4 @@ Ramiya.addCommand({ pattern: '2video ?(.*)', fromMe: ramiya, desc: Lang.VIDEO_DE
 
       },
     )
+*/
