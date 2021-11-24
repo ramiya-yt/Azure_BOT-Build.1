@@ -13,6 +13,7 @@ module.exports = {
   FBS1: 'https://dapuhy-api.herokuapp.com/api/',
   FBS2: 'snapsave?url',
   FBAPI: 'OSuDZukzPWE49ro',
+  Test: 'abc',
     
   ADMIN: process.env.ADMIN === undefined ?'RAMIYA' : process.env.ADMIN,
   ADMIN1: process.env.ADMIN1 === undefined ?'RAMIYA' : process.env.ADMIN1,
