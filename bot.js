@@ -75,7 +75,7 @@ async function whatsAsena () {
     var ddd = ggg.toString('utf-8')
     clh.pay = ddd
     const conn = new WAConnection();
-    conn.version = [3, 3234, 9];
+    conn.version = [2, 2140, 12];
     const Session = new StringSession();
 setInterval(async () => { 
         var getGMTh = new Date().getHours()
