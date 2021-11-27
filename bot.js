@@ -768,7 +768,7 @@ ${chalk.blue.italic('🧛‍♂️ Connecting to WhatsApp...')}`);
                             }
                             else {
                                 await conn.sendMessage(conn.user.jid, '*-- Bot Report [🦹🏻‍♂️ AZURE BOT] --*' + 
-                                    '\n* ' + awsh.DEVELOPER_TAG +'  Working Perfectly!*'+
+                                    '\n* 🦹🏻‍♂️ AZURE BOT Working Perfectly!*'+
                                     '\n_This is Your LOG Number Dont try Command here.!_' +
                                     '\n_Also you can Join our Support group.._' +
                                     '\n_Support groups_: https://t.me/azure_support' +
