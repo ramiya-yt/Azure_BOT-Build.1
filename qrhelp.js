@@ -29,11 +29,11 @@ ${chalk.blue.italic('ℹ️  Connecting to Whatsapp... Please Wait.')}`);
     conn.on('open', async () => {
         var st = Session.createStringSession(conn.base64EncodedAuthInfo());
         console.log(
-            chalk.green.bold('N: '), Session.createStringSession(conn.base64EncodedAuthInfo())
+            chalk.green.bold('A: '), Session.createStringSession(conn.base64EncodedAuthInfo())
         );
         
         if (!fs.existsSync('config.env')) {
-            fs.writeFileSync('config.env', `NEUTRO_SESSION="${st}"`);
+            fs.writeFileSync('config.env', `AZURE_SESSION="${st}"`);
         }
         if (conn.user.jid.startsWith('90')) {
             await conn.sendMessage(conn.user.jid,st, MessageType.text)
