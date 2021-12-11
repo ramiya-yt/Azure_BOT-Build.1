@@ -19,6 +19,7 @@ module.exports = {
     SESSION: process.env.AZURE_SESSION === undefined ? '' : process.env.AZURE_SESSION,
     ANTILINK: process.env.ANTI_LINK === undefined ? 'false' : process.env.ANTI_LINK,
     AUTOBIO: process.env.AUTO_BIO === undefined ? 'false' : process.env.AUTO_BIO,
+    TIME_ZONE: process.env.TIME_ZONE === undefined ? 'Asia/Colombo' : process.env.TIME_ZONE,
     GANSTYLE: process.env.GAN_IMAGE === undefined ? 'https://i.imgur.com/rr3br8Y.jpg' : process.env.GAN_IMAGE,
     LANG: process.env.LANGUAGE === undefined ? 'SI' : process.env.LANGUAGE.toUpperCase(),
     ALIVEMSG: process.env.ALIVE_MESSAGE === undefined ? 'default' : process.env.ALIVE_MESSAGE,
@@ -83,6 +84,9 @@ module.exports = {
     JAPIS: process.env.JAPIS === undefined ?'https://docs-jojo.herokuapp.com/api/' : process.env.JAPIS,
     HSITE: process.env.HSITE === undefined ?'hunter' : process.env.HSITE,
     RSITE: process.env.RSITE === undefined ?'https://rei-api.herokuapp.com/api/dl/' : process.env.RSITE,
+    LOL_API: process.env.LOL_API === undefined ?'default' : process.env.LOL_API,
+    SONG_SERVER: process.env.SONG_SERVER === undefined ?'server1' : process.env.SONG_SERVER,
+    VIDEO_SERVER: process.env.VIDEO_SERVER === undefined ?'server1' : process.env.VIDEO_SERVER,
     INBO: process.env.INBO_BLOCK === undefined ? 'false' : process.env.INBO_BLOCK,
     BRANCH: 'master',
     HEROKU: {
