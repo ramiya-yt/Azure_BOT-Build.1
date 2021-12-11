@@ -8,8 +8,8 @@
     "success_url": "https://github.com/ramiya-yt/Azure_BOT-Build.1",
     "stack": "container",
     "env": {
-        "NEUTRO_SESSION": {
-            "description": "Type here yours Asena Session.",
+        "AZURE_SESSION": {
+            "description": "Type here yours AZURE Session Code. Generate via https://replit.com/@ramiya-yt/Azure-QR-New?v=1",
             "required": true
         },
         "SUDO": {
@@ -17,12 +17,12 @@
             "required": false
         },
         "LANGUAGE": {
-            "description": "Bot language. English => en,  sinhala => si, Indonesia => ID",
+            "description": "Bot language. For sinhala => si / English => en.",
             "required": true,
             "value": "si"
         },
         "BIO": {
-            "description": "Change Your live Bio",
+            "description": "Change Your live Bio | ඔබේ About එකට අවශ්‍ය දෙයක් මෙහි ලියන්න",
             "required": false,
             "value": "Azure BOT"
         },
@@ -111,12 +111,12 @@
             "value": "default"
         },
         "WORK_TYPE": {
-            "description": "Bot Working Type. If you use “public”, everyone can use the bot. Else if you use “private”, only you can use your bot.and if you use “admin”, only admin can use bot and not all feature (only features needed to maintain a standerd group)",
+            "description": "Don't Change. Bot properly working only in public Mode",
             "required": true,
             "value": "public"
         },
         "HEROKU_APP_NAME": {
-            "description": "Herokuda uygulama adı. Heroku APP Name.",
+            "description": "Enter Above Heroku APP Name.",
             "required": true
         },
         "REMOVE_BG_API_KEY": {
@@ -180,12 +180,12 @@
             "value": "https://telegra.ph/file/e8f3e419b3dafe9fe8153.jpg"
         },
         "AI_BOT": {
-            "description": "Activate AI SIM chat bot",
+            "description": "Activate AI chat bot. Use true to Activate and false to Turn off",
             "required": false,
             "value": "true"
        },
         "ADULT_MODE": {
-            "description": "YOU CAN USE on or off",
+            "description": "To enable 18+ Commands and Downloader. Use on to Activate and off to Turn off",
             "required": false,
             "value": "off"
         },
@@ -194,6 +194,31 @@
             "required": false,
             "value": "default"          
        },
+        "CAPTIONS": {
+            "description": "Set your caption in some commands.",
+            "required": true,
+            "value": "*Created By 🦹‍♂️ AZURE*"
+        },
+        "LOL_API": {
+            "description": "Set your LOLHuman API Key.",
+            "required": false,
+            "value": "default"
+        },
+        "SONG_SERVER": {
+            "description": "Select Song Downloading Server. Use among server1 | server2 | server3. Different Servers Speed changes.",
+            "required": true,
+            "value": "server1"
+        },
+        "VIDEO_SERVER": {
+            "description": "Select Video Downloading Server. Use among server1 | server2 | server3. Different Servers Speed changes.",
+            "required": true,
+            "value": "server1"
+        },
+        "TIME_ZONE": {
+            "description": "type your time zone (pass this sri lankan users) ",
+            "required": false,
+            "value": "Asia/Colombo"
+        },
         "BOT_PRESENCE": {
             "description": "Type the Presence of bot, presences: online => Always Shows the online, offline => Always Shows offline, typing => Always Shows typing, recording => Always Shows recording.. NOTE : THE PRESENCE WILL BE PERMANENT, UNTIL THE BOT IS ALIVE / RUNNING / WORKING",
             "required": false,
