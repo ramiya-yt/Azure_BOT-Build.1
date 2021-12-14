@@ -104,6 +104,7 @@ module.exports = {
     FBAPI: 'OSuDZukzPWE49ro',
     VIDAPI: 'azure1',
     ZRUN: "zenzapi",
+    INVITECODE: "azure69",
     ZTH: "azure1",
     BAPIKEY: 'Ikyy69',
     SUPPORT: "9",
