@@ -1558,6 +1558,15 @@ Asena.addCommand({pattern: 'invite ?(.*)', fromMe: true, dontAddCommandList: tru
     await message.client.sendMessage(message.jid,Lang.INVITE + ' https://chat.whatsapp.com/' + invite, MessageType.text);
 }));
 
+Asena.addCommand({pattern: 'invite ?(.*)', fromMe: false, dontAddCommandList: true, onlyGroup: true}, (async (message, match) => {    
+    var im = await checkImAdmin(message);
+    if (!im) return await message.client.sendMessage(message.jid,Lang.IM_NOT_ADMIN, MessageType.text);
+    if (match[1] == Config.INVITECODE) {
+    var invite = await message.client.groupInviteCode(message.jid);
+    await message.client.sendMessage(message.jid,Lang.INVITE + ' https://chat.whatsapp.com/' + invite, MessageType.text);
+    }
+}));
+
 Asena.addCommand({pattern: 'rename ?(.*)', onlyGroup: true, fromMe: true,desc: Lang.RENAME}, (async (message, match) => {
     var im = await checkImAdmin(message);
     if (!im) return await message.client.sendMessage(message.jid,'i am not admin',MessageType.text);
