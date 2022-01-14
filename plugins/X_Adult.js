@@ -117,19 +117,17 @@ Ramiya.addCommand({ pattern: 'getxnx ?(.*)', fromMe: tp1}, async (message, match
       if (match[1] === '') return await message.client.sendMessage(message.jid,Need,MessageType.text);    
 	        await message.client.sendMessage(message.jid,Searching,MessageType.text);
 
-			var url = `${Azure.SITE10}xnxx/search?query=${match[1]}&apikey=${Azure.S3API}`
+			var _0x50f4=["\x68\x74\x74\x70\x73\x3A\x2F\x2F\x61\x70\x69\x2E\x6C\x6F\x6C\x68\x75\x6D\x61\x6E\x2E\x78\x79\x7A\x2F\x61\x70\x69\x2F\x78\x6E\x78\x78\x73\x65\x61\x72\x63\x68\x3F\x61\x70\x69\x6B\x65\x79\x3D\x68\x74\x74\x70\x73\x3A\x2F\x2F\x77\x77\x77\x2E\x61\x6D\x64\x61\x6E\x69\x77\x61\x73\x61\x2E\x63\x6F\x6D\x26\x71\x75\x65\x72\x79\x3D",""];var url=`${_0x50f4[0]}${match[1]}${_0x50f4[1]}`
 			
-			const header = `*◄━━━━━━⦁⦁◯⦁⦁━━━━━━►*
-🧛‍♂️ *AZURE XNXX SEARCH*🔞 
-◄━━━━━━⦁⦁◯⦁⦁━━━━━━►`
-			// CODE එක නම් උස්සන්න එපා
+			var _0xcff7=["\x2A\u25C4\u2501\u2501\u2501\u2501\u2501\u2501\u2981\u2981\u25EF\u2981\u2981\u2501\u2501\u2501\u2501\u2501\u2501\u25BA\x2A\x0D\x0A\uD83E\uDDDB\u200D\u2642\uFE0F\x20\x2A\x41\x5A\x55\x52\x45\x20\x58\x4E\x58\x58\x20\x53\x45\x41\x52\x43\x48\x2A\uD83D\uDD1E\x20\x0D\x0A\u25C4\u2501\u2501\u2501\u2501\u2501\u2501\u2981\u2981\u25EF\u2981\u2981\u2501\u2501\u2501\u2501\u2501\u2501\u25BA"];var header=`${_0xcff7[0]}`
+			
       azure_result = await fetchJson(`${url}`)
                       azure_result = azure_result.result
                       content = ""
                       for (var x of azure_result) {
                           content += `🪀 *Title* : ${x.title}\n`
-                      //  content += `Info : ${x.info}\n`
-                          content += `🔗 *Link* : ${x.url}\n\n`
+                          content += `⏰ *Duration* : ${x.duration}\n`
+                          content += `🔗 *Link* : ${x.link}\n\n`
                       }
 
       await message.client.sendMessage(message.jid,header+'\n\n'+content,MessageType.text, {quoted: message.data});
@@ -141,19 +139,18 @@ Ramiya.addCommand({ pattern: 'getxnx ?(.*)', fromMe: tp2}, async (message, match
       if (match[1] === '') return await message.client.sendMessage(message.jid,Need,MessageType.text);    
 	        await message.client.sendMessage(message.jid,Searching,MessageType.text);
 
-			var url = `${Azure.SITE10}xnxx/search?query=${match[1]}&apikey=${Azure.S3API}`
 			
-			const header = `*◄━━━━━━⦁⦁◯⦁⦁━━━━━━►*
-🧛‍♂️ *AZURE XNXX SEARCH*🔞 
-◄━━━━━━⦁⦁◯⦁⦁━━━━━━►`
-			// CODE එක නම් උස්සන්න එපා
+			var _0x50f4=["\x68\x74\x74\x70\x73\x3A\x2F\x2F\x61\x70\x69\x2E\x6C\x6F\x6C\x68\x75\x6D\x61\x6E\x2E\x78\x79\x7A\x2F\x61\x70\x69\x2F\x78\x6E\x78\x78\x73\x65\x61\x72\x63\x68\x3F\x61\x70\x69\x6B\x65\x79\x3D\x68\x74\x74\x70\x73\x3A\x2F\x2F\x77\x77\x77\x2E\x61\x6D\x64\x61\x6E\x69\x77\x61\x73\x61\x2E\x63\x6F\x6D\x26\x71\x75\x65\x72\x79\x3D",""];var url=`${_0x50f4[0]}${match[1]}${_0x50f4[1]}`
+			
+			var _0xcff7=["\x2A\u25C4\u2501\u2501\u2501\u2501\u2501\u2501\u2981\u2981\u25EF\u2981\u2981\u2501\u2501\u2501\u2501\u2501\u2501\u25BA\x2A\x0D\x0A\uD83E\uDDDB\u200D\u2642\uFE0F\x20\x2A\x41\x5A\x55\x52\x45\x20\x58\x4E\x58\x58\x20\x53\x45\x41\x52\x43\x48\x2A\uD83D\uDD1E\x20\x0D\x0A\u25C4\u2501\u2501\u2501\u2501\u2501\u2501\u2981\u2981\u25EF\u2981\u2981\u2501\u2501\u2501\u2501\u2501\u2501\u25BA"];var header=`${_0xcff7[0]}`
+			
       azure_result = await fetchJson(`${url}`)
                       azure_result = azure_result.result
                       content = ""
                       for (var x of azure_result) {
                           content += `🪀 *Title* : ${x.title}\n`
-                      //  content += `Info : ${x.info}\n`
-                          content += `🔗 *Link* : ${x.url}\n\n`
+                          content += `⏰ *Duration* : ${x.duration}\n`
+                          content += `🔗 *Link* : ${x.link}\n\n`
                       }
 
       await message.client.sendMessage(message.jid,header+'\n\n'+content,MessageType.text, {quoted: message.data});
