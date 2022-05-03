@@ -162,22 +162,22 @@
         "WELCOME_GIF": {
             "description": "Welcome Gif",
             "required": false,
-            "value": "https://telegra.ph/file/d969f3365028c88c7719f.mp4"
+            "value": "https://telegra.ph/file/fab067f8c65f4ceb348c6.mp4"
         }, 
         "BYE_GIF": {
             "description": "Bye gif",
             "required": false,
-            "value": "https://telegra.ph/file/d969f3365028c88c7719f.mp4"
+            "value": "https://telegra.ph/file/fab067f8c65f4ceb348c6.mp4"
         },
         "ALIVE_LOGO": {
             "description": "Alive message Photo.",
             "required": false,
-            "value": "https://telegra.ph/file/e8f3e419b3dafe9fe8153.jpg"
+            "value": "https://i.imgur.com/rr3br8Y.jpg"
        },
         "MENU_LOGO": {
             "description": "Menu message Photo.",
             "required": false,
-            "value": "https://telegra.ph/file/e8f3e419b3dafe9fe8153.jpg"
+            "value": "https://i.imgur.com/rr3br8Y.jpg"
         },
         "AI_BOT": {
             "description": "Activate AI chat bot. Use true to Activate and false to Turn off",
